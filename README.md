@@ -29,38 +29,44 @@
 
 #### Preferred
 ```
-  ShowMeTheMoneyActivity
-  ShowMeTheMoneyViewController
+    - ShowMeTheMoneyActivity
+    - ShowMeTheMoneyViewController
 ```  
 
 #### Not Preferred:
 ```
-  ShowMeTheMoneyAct
-  SmtmActivity
-  SmtmAct
-  ShowMeTheMoneyVC
-  SmtmViewController
-  SmtmVC
+    - ShowMeTheMoneyAct
+    - SmtmActivity
+    - SmtmAct
+    - ShowMeTheMoneyVC
+    - SmtmViewController
+    - SmtmVC
 ```  
 
 ### Presenter
 ```
-  ShowMeTheMoneyPresenter
+    - ShowMeTheMoneyPresenter
 ```  
 
 ### ViewModel
-  ShowMeTheMoneyViewModel
+```
+    - ShowMeTheMoneyViewModel
+```
 
 ### UseCase
-``` StreamerUseCase 
-    FingerprintUseCase
+``` 
+    - StreamerUseCase 
+    - FingerprintUseCase
 ```
 
 ### Repository
-``` UserProfileRepository 
-    SurveyRepository
+``` 
+    - UserProfileRepository 
+    - SurveyRepository
 ```
 
 ### Interface, protocal
-- StreamerUseCase
-- StreamerUseCaseProtocol
+``` 
+    - StreamerUseCase 
+    - StreamerUseCaseProtocol
+```
