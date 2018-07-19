@@ -29,28 +29,28 @@
 
 #### Preferred
 ```
-    - ShowMeTheMoneyActivity
-    - ShowMeTheMoneyViewController
+    - WorldCupActivity
+    - WorldCupViewController
 ```  
 
 #### Not Preferred:
 ```
-    - ShowMeTheMoneyAct
-    - SmtmActivity
-    - SmtmAct
-    - ShowMeTheMoneyVC
-    - SmtmViewController
-    - SmtmVC
+    - WorldCupAct
+    - WCActivity
+    - WCAct
+    - WCViewController
+    - WorldCupController
+    - WCVC
 ```  
 
 ### Presenter
 ```
-    - ShowMeTheMoneyPresenter
+    - WorldCupPresenter
 ```  
 
 ### ViewModel
 ```
-    - ShowMeTheMoneyViewModel
+    - WorldCupViewModel
 ```
 
 ### UseCase
