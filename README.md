@@ -9,7 +9,7 @@
 | Icons                           | `ic_`            | `ic_like.png, ic_like_active.png, ic_like_circle, ic_like_red` |   
 | Background                      | `bg_`            | `bg_worldcup_campaign.png`                   |                
 | Button                          | `btn_`           | `btn_search_red.png, btn_search_active.png`  |
-| PlaceHoder                      | `ph_x_w_h`       | `ph_banner_16_9.png`                         |                                               
+| PlaceHolder                      | `ph_x_w_h`       | `ph_banner_16_9.png`                         |                                               
 
 
 
