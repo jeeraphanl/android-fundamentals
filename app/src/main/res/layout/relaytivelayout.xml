@@ -47,6 +47,6 @@
         android:layout_width="100dp"
         android:layout_height="100dp"
         android:layout_toRightOf="@+id/view1"
-        android:background="#76D7C4" />
+        android:background="@color/colorGreenPastel" />
 
 </RelativeLayout>
