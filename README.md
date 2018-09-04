@@ -8,16 +8,21 @@
 ```
 ## View
 ```
+    - View
     - TextView
     - Button
     - EditText
     - ImageView
     - ImageButton
     - CheckBox
-    - Radio
 ```
 ## Dimension
 ```
     - px, dp, sp
     - ldpi, mdpi, hdpi, xhdpi, xxhdpi, xxxhdpi
+```
+## Resource
+```
+    - strings
+    - colors
 ```
