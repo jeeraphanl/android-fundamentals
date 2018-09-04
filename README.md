@@ -1,4 +1,4 @@
-# Step1 Layout
+# Chapter 1 - Layouts
 ## View group
 ```
     - LinearLayout (Horizontal, Vertical)
