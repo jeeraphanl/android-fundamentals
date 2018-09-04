@@ -128,5 +128,136 @@
     fun someFunction(parameter1: String, parameter2: String, parameter3: String,
                     parameter4: String, parameter5: String, callback: Callback) {
             
+    }
+```
+
+### Builder pattern
+```
+    Glide.with(context)
+        .load(path)
+        .crossFade()
+        .fitCenter()
+        .diskCacheStrategy(DiskCacheStrategy.NONE)
+        .into(imageView)
+```
+
+### Reactive Extension new operator
+```
+    Observable.timer()
+        .filter(::condition)
+        .map(:functionMap)
+        .addToDispose()    
+```
+
+### Constants
+```
+    iOS
+    enum Match {
+      static let barHeight = 2.718281828459045235360287
+    }
+    
+    Android
+    object Match {
+        const val BAR_HEIGHT = 2.718281828459045235360287
+    }
+    
+    class Match {
+        companion object {
+            private const val BAR_HEIGHT = 2.718281828459045235360287
         }
+    }
+    
+    interface A {
+        const val BAR_HEIGHT = 2.718281828459045235360287
+    }
+```
+    
+### Return Unit function
+#### Not Preferred:
+```
+    private fun someFunction(): Unit {
+        if (a == b) {
+            return
+        }
+
+        * Statement
+        * Statement
+        * Statement        
+    }
+```
+#### Preferred:
+```
+    private fun someFunction(): Unit {
+        if (a != b) {
+            * Statement
+            * Statement
+            * Statement
+        }
+    }
+```
+#### Not Preferred:
+```
+    private fun someFunction() {
+        if (a == b) {
+            * Statement
+            * Statement
+            * Statement
+            * */
+            return
+        }
+
+        /*
+        * Statement
+        * Statement
+        * Statement
+    }
+```
+#### Preferred:
+```
+    private fun someFunction() {
+        if (a == b) {           
+            * Statement
+            * Statement
+            * Statement
+        } else {
+             * Statement
+             * Statement
+             * Statement
+        }
+    }
+```
+
+#### Not Preferred:
+```
+    private fun someFunction() {
+        if (a == b) {
+            * Statement
+            return
+        }
+
+        if (b == c) {
+            * Statement
+            return
+        }
+
+        /*
+        * Statement
+        * Statement
+        * Statement
+        * */
+    }
+```    
+#### Preferred:
+```
+    private fun someFunction() {
+        if (a == b) {
+            * Statement
+        } else if (b == c) {
+            * Statement
+        } else {
+            * Statement
+            * Statement
+            * Statement
+        }
+    }
 ```
