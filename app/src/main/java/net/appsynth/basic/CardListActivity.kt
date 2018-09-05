@@ -1,5 +1,6 @@
 package net.appsynth.basic
 
+import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
@@ -7,6 +8,7 @@ import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.text.InputType
 import android.widget.EditText
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_card_list.*
 import kotlinx.android.synthetic.main.content_card_list.*
 
@@ -55,10 +57,21 @@ class CardListActivity : AppCompatActivity() {
                 this.position = position
             })
 
-            startActivity(intent)
+            //startActivity(intent)
+            startActivityForResult(intent, CardDetailActivity.REQUEST_CODE)
         }
 
         cardRecyclerView.adapter = cardRecyclerViewAdapter
+    }
+
+    override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
+        super.onActivityResult(requestCode, resultCode, data)
+        if (requestCode == CardDetailActivity.REQUEST_CODE) {
+            when(resultCode) {
+                Activity.RESULT_CANCELED -> Toast.makeText(this, "Cancel", Toast.LENGTH_LONG).show()
+                Activity.RESULT_OK -> Toast.makeText(this, "Ok", Toast.LENGTH_LONG).show()
+            }
+        }
     }
 
     private fun showAddCardDialog() {

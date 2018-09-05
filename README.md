@@ -7,9 +7,11 @@
     - onResume
     - onPause
     - onStop
-    - onDestory            
+    - onDestory          
+    - onConfigurationChanged  
     - onSaveInstanceState
-    - onRestoreInstanceState    
+    - onRestoreInstanceState
+    - onActivityResult    
 ```
 
 ## View
