@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">basic-android</string>
+    <string name="score">Score: %s</string>
+    <string name="timeleft">Timeleft: %s</string>
+    <string name="tab">Tab</string>
+    <string name="game_over_message">Times up! Your score was: %s</string>
 </resources>
