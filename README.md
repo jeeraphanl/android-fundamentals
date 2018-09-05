@@ -5,4 +5,11 @@
     - FindViewById
     - SaveInstanceState
     - RestoreInstanceState
+    - CoordinatorLayout
+    - AppBarLayout
+    - Toolbar
+    - FloatingActionButton
+    - RecyclerView
+    - RecyclerView Adapter
+    - ViewHolder    
 ```

@@ -4,4 +4,6 @@
     <string name="timeleft">Timeleft: %s</string>
     <string name="tab">Tab</string>
     <string name="game_over_message">Times up! Your score was: %s</string>
+    <string name="title_activity_list">ListActivity</string>
+    <string name="title_activity_card_list">CardListActivity</string>
 </resources>
