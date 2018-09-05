@@ -1,10 +1,20 @@
 # Chapter2 - Activity
+
+## Activity Lifecycle
 ```
-    - Android Lifecycle
-    - Context
-    - FindViewById
+    - onCreate
+    - onStart
+    - onResume
+    - onPause
+    - onStop
+    - onDestory            
     - SaveInstanceState
-    - RestoreInstanceState
+    - RestoreInstanceState    
+```
+
+## View
+```
+    - FindViewById
     - CoordinatorLayout
     - AppBarLayout
     - Toolbar
@@ -12,6 +22,11 @@
     - RecyclerView
     - RecyclerView Adapter
     - ViewHolder
+```
+
+## Data
+```
+    - Context
     - Intent
     - Bundle
     - Parcelable    
