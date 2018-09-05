@@ -1,5 +1,6 @@
 package net.appsynth.basic
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
@@ -18,19 +19,45 @@ class CardListActivity : AppCompatActivity() {
         setContentView(R.layout.activity_card_list)
         setSupportActionBar(toolbar)
 
-        fab.setOnClickListener {
+        floatingActionButton.setOnClickListener {
             showAddCardDialog()
         }
 
         /**
          * step 1
+         * Set LinearLayoutManager RecyclerView
          * LinearLayoutManager isn’t the only layout provided by RecyclerView. Out of the box,
          * RecyclerView provides the GridLayoutManager and StaggeredGridLayoutManager.
          */
         cardRecyclerView.layoutManager = LinearLayoutManager(this)
 
-        // step 2
+        /**
+         * step 2
+         * Set adapter RecyclerView
+         */
         cardRecyclerViewAdapter = CardRecyclerViewAdapter()
+
+        //set event click listener
+        cardRecyclerViewAdapter.itemClick = { position: Int, cardName: String ->
+            val intent = Intent(this, CardDetailActivity::class.java)
+
+
+            //intent.putExtra("key_position", position)
+            //intent.putExtra("key_card_name", cardName)
+
+            //intent.putExtra("key_bundle", Bundle().apply {
+            //    putInt("key_position", position)
+            //    putString("key_card_name", cardName)
+            //})
+
+            intent.putExtra("key_parcelable", Card().apply {
+                name = cardName
+                this.position = position
+            })
+
+            startActivity(intent)
+        }
+
         cardRecyclerView.adapter = cardRecyclerViewAdapter
     }
 
@@ -42,8 +69,7 @@ class CardListActivity : AppCompatActivity() {
         AlertDialog.Builder(this)
                 .setTitle("Add you card name.")
                 .setView(cardNameEditText)
-                .setPositiveButton("ADD") { dialog, which ->
-
+                .setPositiveButton("ADD") { dialog, _ ->
                     val newCardName = cardNameEditText.text.toString()
                     if (newCardName.isNotEmpty()) {
                         cardRecyclerViewAdapter.cardList.add(newCardName)

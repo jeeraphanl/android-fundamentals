@@ -11,5 +11,8 @@
     - FloatingActionButton
     - RecyclerView
     - RecyclerView Adapter
-    - ViewHolder    
+    - ViewHolder
+    - Intent
+    - Bundle
+    - Parcelable    
 ```
