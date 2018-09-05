@@ -8,8 +8,8 @@
     - onPause
     - onStop
     - onDestory            
-    - SaveInstanceState
-    - RestoreInstanceState    
+    - onSaveInstanceState
+    - onRestoreInstanceState    
 ```
 
 ## View
