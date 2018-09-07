@@ -9,16 +9,16 @@ import kotlinx.android.synthetic.main.activity_card_list.*
 
 class CardListActivity : AppCompatActivity(), CardListFragment.OnListItemFragmentInteractionListener {
 
+    private var isLargeScreen = false
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_card_list)
 
-        supportFragmentManager.beginTransaction()
-                .replace(R.id.containerFragment, CardListFragment.newInstance(), "TAG_CARD_LIST")
-                .commit()
+        isLargeScreen = containerFragmentDetail != null
 
         supportFragmentManager.beginTransaction()
-                .replace(R.id.containerFragmentDetail, CardDetailFragment.newInstance("Empty data", 0), "TAG_CARD_DETAIL")
+                .replace(R.id.containerFragment, CardListFragment.newInstance(), "TAG_CARD_LIST")
                 .commit()
 
         floatingActionButton.setOnClickListener {
@@ -30,10 +30,18 @@ class CardListActivity : AppCompatActivity(), CardListFragment.OnListItemFragmen
      * OnListItemFragmentInteractionListener
      */
     override fun onListItemClicked(position: Int, cardName: String) {
-        supportFragmentManager.beginTransaction()
-                .replace(R.id.containerFragmentDetail,
-                        CardDetailFragment.newInstance(cardName, position), "TAG_CARD_DETAIL")
-                .commit()
+        if (isLargeScreen) {
+            supportFragmentManager.beginTransaction()
+                    .replace(R.id.containerFragmentDetail,
+                            CardDetailFragment.newInstance(cardName, position), "TAG_CARD_DETAIL")
+                    .commit()
+        } else {
+            supportFragmentManager.beginTransaction()
+                    .replace(R.id.containerFragment,
+                            CardDetailFragment.newInstance(cardName, position), "TAG_CARD_DETAIL")
+                    .addToBackStack(null)
+                    .commit()
+        }
     }
 
     private fun showAddCardDialog() {
