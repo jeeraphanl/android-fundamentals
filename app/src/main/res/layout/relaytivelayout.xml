@@ -19,6 +19,12 @@
         android:layout_alignParentRight="true"
         android:layout_alignParentTop="true"
         android:background="#F4D03F" />
+    <View
+        android:layout_width="100dp"
+        android:layout_height="100dp"
+        android:layout_below="@+id/view2"
+        android:layout_alignParentRight="true"
+        android:background="#F08080" />
 
     <View
         android:id="@+id/view3"
