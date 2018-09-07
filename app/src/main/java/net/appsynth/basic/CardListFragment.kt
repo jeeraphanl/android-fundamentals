@@ -1,23 +1,36 @@
 package net.appsynth.basic
 
+import android.content.Context
 import android.os.Bundle
 import android.support.v4.app.Fragment
-import android.support.v7.app.AlertDialog
 import android.support.v7.widget.LinearLayoutManager
-import android.text.InputType
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.EditText
+import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_card_list.*
 
 class CardListFragment : Fragment() {
 
+    interface OnListItemFragmentInteractionListener {
+        fun onListItemClicked(position: Int, cardName: String)
+    }
+
+    private var listener: OnListItemFragmentInteractionListener? = null
     private lateinit var cardRecyclerViewAdapter: CardRecyclerViewAdapter
 
     companion object {
         fun newInstance(): CardListFragment {
             return CardListFragment()
+        }
+    }
+
+    override fun onAttach(context: Context?) {
+        super.onAttach(context)
+        if (context is OnListItemFragmentInteractionListener) {
+            listener = context
+        } else {
+            Toast.makeText(context, "onAttach error", Toast.LENGTH_LONG).show()
         }
     }
 
@@ -49,13 +62,10 @@ class CardListFragment : Fragment() {
         cardRecyclerViewAdapter = CardRecyclerViewAdapter()
         //set event click listener
         cardRecyclerViewAdapter.itemClick = { position: Int, cardName: String ->
-
+            listener?.onListItemClicked(position, cardName)
         }
+
         cardRecyclerView.adapter = cardRecyclerViewAdapter
-
-        floatingActionButton.setOnClickListener {
-            showAddCardDialog()
-        }
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -76,27 +86,6 @@ class CardListFragment : Fragment() {
 
     override fun onDetach() {
         super.onDetach()
-    }
-
-    private fun showAddCardDialog() {
-
-        context?.let { context ->
-            val cardNameEditText = EditText(context)
-            cardNameEditText.inputType = InputType.TYPE_CLASS_TEXT
-
-            AlertDialog.Builder(context)
-                    .setTitle("Add you card name.")
-                    .setView(cardNameEditText)
-                    .setPositiveButton("ADD") { dialog, _ ->
-                        val newCardName = cardNameEditText.text.toString()
-                        if (newCardName.isNotEmpty()) {
-                            cardRecyclerViewAdapter.cardList.add(newCardName)
-                            cardRecyclerViewAdapter.notifyDataSetChanged()
-                        }
-                        dialog.dismiss()
-                    }
-                    .create()
-                    .show()
-        }
+        listener = null
     }
 }
