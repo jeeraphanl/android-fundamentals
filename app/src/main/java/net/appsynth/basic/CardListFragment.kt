@@ -44,7 +44,6 @@ class CardListFragment : Fragment() {
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
 
         super.onViewCreated(view, savedInstanceState)
         /**
@@ -87,5 +86,10 @@ class CardListFragment : Fragment() {
     override fun onDetach() {
         super.onDetach()
         listener = null
+    }
+
+    internal fun addCardList(cardName: String) {
+        cardRecyclerViewAdapter.cardList.add(cardName)
+        cardRecyclerViewAdapter.notifyDataSetChanged()
     }
 }
