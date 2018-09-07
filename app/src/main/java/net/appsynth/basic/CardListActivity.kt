@@ -59,6 +59,7 @@ class CardListActivity : AppCompatActivity() {
 
             //startActivity(intent)
             startActivityForResult(intent, CardDetailActivity.REQUEST_CODE)
+            overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
         cardRecyclerView.adapter = cardRecyclerViewAdapter
