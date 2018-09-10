@@ -3,7 +3,7 @@ package net.appsynth.basic
 class FeedResponse {
     var status: String? = null
     val totalResults: Int? = null
-    var articles: ArrayList<Article>? = null
+    var articles: MutableList<Article>? = null
 }
 
 class Article {

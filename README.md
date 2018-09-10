@@ -2,5 +2,5 @@
 ```
     - Retrofit
     - Gson
-    - Glide
+    - Picasso
 ```
