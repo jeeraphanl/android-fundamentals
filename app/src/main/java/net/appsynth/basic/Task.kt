@@ -3,7 +3,7 @@ package net.appsynth.basic
 import android.os.Parcel
 import android.os.Parcelable
 
-class Card() : Parcelable {
+class Task() : Parcelable {
 
     var name: String? = null
     var position: Int? = null
@@ -22,12 +22,12 @@ class Card() : Parcelable {
         return 0
     }
 
-    companion object CREATOR : Parcelable.Creator<Card> {
-        override fun createFromParcel(parcel: Parcel): Card {
-            return Card(parcel)
+    companion object CREATOR : Parcelable.Creator<Task> {
+        override fun createFromParcel(parcel: Parcel): Task {
+            return Task(parcel)
         }
 
-        override fun newArray(size: Int): Array<Card?> {
+        override fun newArray(size: Int): Array<Task?> {
             return arrayOfNulls(size)
         }
     }

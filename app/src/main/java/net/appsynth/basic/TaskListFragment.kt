@@ -8,20 +8,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import kotlinx.android.synthetic.main.fragment_card_list.*
+import kotlinx.android.synthetic.main.fragment_task_list.*
 
-class CardListFragment : Fragment() {
+class TaskListFragment : Fragment() {
 
     interface OnListItemFragmentInteractionListener {
-        fun onListItemClicked(position: Int, cardName: String)
+        fun onListItemClicked(position: Int, taskName: String)
     }
 
     private var listener: OnListItemFragmentInteractionListener? = null
-    private lateinit var cardRecyclerViewAdapter: CardRecyclerViewAdapter
+    private lateinit var taskRecyclerViewAdapter: TaskRecyclerViewAdapter
 
     companion object {
-        fun newInstance(): CardListFragment {
-            return CardListFragment()
+        fun newInstance(): TaskListFragment {
+            return TaskListFragment()
         }
     }
 
@@ -40,7 +40,7 @@ class CardListFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_card_list, container, false)
+        return inflater.inflate(R.layout.fragment_task_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,19 +52,19 @@ class CardListFragment : Fragment() {
          * LinearLayoutManager isn’t the only layout provided by RecyclerView. Out of the box,
          * RecyclerView provides the GridLayoutManager and StaggeredGridLayoutManager.
          */
-        cardRecyclerView.layoutManager = LinearLayoutManager(context)
+        taskRecyclerView.layoutManager = LinearLayoutManager(context)
 
         /**
          * step 2
          * Set adapter RecyclerView
          */
-        cardRecyclerViewAdapter = CardRecyclerViewAdapter()
+        taskRecyclerViewAdapter = TaskRecyclerViewAdapter()
         //set event click listener
-        cardRecyclerViewAdapter.itemClick = { position: Int, cardName: String ->
-            listener?.onListItemClicked(position, cardName)
+        taskRecyclerViewAdapter.itemClick = { position: Int, taskName: String ->
+            listener?.onListItemClicked(position, taskName)
         }
 
-        cardRecyclerView.adapter = cardRecyclerViewAdapter
+        taskRecyclerView.adapter = taskRecyclerViewAdapter
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -88,8 +88,8 @@ class CardListFragment : Fragment() {
         listener = null
     }
 
-    internal fun addCardList(cardName: String) {
-        cardRecyclerViewAdapter.cardList.add(cardName)
-        cardRecyclerViewAdapter.notifyDataSetChanged()
+    internal fun addTaskList(taskName: String) {
+        taskRecyclerViewAdapter.taskList.add(taskName)
+        taskRecyclerViewAdapter.notifyDataSetChanged()
     }
 }
