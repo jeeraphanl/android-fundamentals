@@ -9,20 +9,20 @@ import android.support.v7.widget.LinearLayoutManager
 import android.text.InputType
 import android.widget.EditText
 import android.widget.Toast
-import kotlinx.android.synthetic.main.activity_card_list.*
-import kotlinx.android.synthetic.main.content_card_list.*
+import kotlinx.android.synthetic.main.activity_task_list.*
+import kotlinx.android.synthetic.main.content_task_list.*
 
-class CardListActivity : AppCompatActivity() {
+class TaskListActivity : AppCompatActivity() {
 
-    private lateinit var cardRecyclerViewAdapter: CardRecyclerViewAdapter
+    private lateinit var taskRecyclerViewAdapter: TaskRecyclerViewAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_card_list)
+        setContentView(R.layout.activity_task_list)
         setSupportActionBar(toolbar)
 
         floatingActionButton.setOnClickListener {
-            showAddCardDialog()
+            showAddTaskDialog()
         }
 
         /**
@@ -31,43 +31,43 @@ class CardListActivity : AppCompatActivity() {
          * LinearLayoutManager isn’t the only layout provided by RecyclerView. Out of the box,
          * RecyclerView provides the GridLayoutManager and StaggeredGridLayoutManager.
          */
-        cardRecyclerView.layoutManager = LinearLayoutManager(this)
+        taskRecyclerView.layoutManager = LinearLayoutManager(this)
 
         /**
          * step 2
          * Set adapter RecyclerView
          */
-        cardRecyclerViewAdapter = CardRecyclerViewAdapter()
+        taskRecyclerViewAdapter = TaskRecyclerViewAdapter()
 
         //set event click listener
-        cardRecyclerViewAdapter.itemClick = { position: Int, cardName: String ->
-            val intent = Intent(this, CardDetailActivity::class.java)
+        taskRecyclerViewAdapter.itemClick = { position: Int, taskName: String ->
+            val intent = Intent(this, TaskDetailActivity::class.java)
 
 
             //intent.putExtra("key_position", position)
-            //intent.putExtra("key_card_name", cardName)
+            //intent.putExtra("key_task_name", taskName)
 
             //intent.putExtra("key_bundle", Bundle().apply {
             //    putInt("key_position", position)
-            //    putString("key_card_name", cardName)
+            //    putString("key_task_name", taskName)
             //})
 
-            intent.putExtra("key_parcelable", Card().apply {
-                name = cardName
+            intent.putExtra("key_parcelable", Task().apply {
+                title = taskName
                 this.position = position
             })
 
             //startActivity(intent)
-            startActivityForResult(intent, CardDetailActivity.REQUEST_CODE)
+            startActivityForResult(intent, TaskDetailActivity.REQUEST_CODE)
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
-        cardRecyclerView.adapter = cardRecyclerViewAdapter
+        taskRecyclerView.adapter = taskRecyclerViewAdapter
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
-        if (requestCode == CardDetailActivity.REQUEST_CODE) {
+        if (requestCode == TaskDetailActivity.REQUEST_CODE) {
             when(resultCode) {
                 Activity.RESULT_CANCELED -> Toast.makeText(this, "Cancel", Toast.LENGTH_LONG).show()
                 Activity.RESULT_OK -> Toast.makeText(this, "Ok", Toast.LENGTH_LONG).show()
@@ -75,19 +75,19 @@ class CardListActivity : AppCompatActivity() {
         }
     }
 
-    private fun showAddCardDialog() {
+    private fun showAddTaskDialog() {
 
-        val cardNameEditText = EditText(this)
-        cardNameEditText.inputType = InputType.TYPE_CLASS_TEXT
+        val taskNameEditText = EditText(this)
+        taskNameEditText.inputType = InputType.TYPE_CLASS_TEXT
 
         AlertDialog.Builder(this)
-                .setTitle("Add you card name.")
-                .setView(cardNameEditText)
+                .setTitle("Add your task title.")
+                .setView(taskNameEditText)
                 .setPositiveButton("ADD") { dialog, _ ->
-                    val newCardName = cardNameEditText.text.toString()
-                    if (newCardName.isNotEmpty()) {
-                        cardRecyclerViewAdapter.cardList.add(newCardName)
-                        cardRecyclerViewAdapter.notifyDataSetChanged()
+                    val newTaskName = taskNameEditText.text.toString()
+                    if (newTaskName.isNotEmpty()) {
+                        taskRecyclerViewAdapter.taskList.add(newTaskName)
+                        taskRecyclerViewAdapter.notifyDataSetChanged()
                     }
                     dialog.dismiss()
                 }

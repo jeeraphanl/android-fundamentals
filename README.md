@@ -24,6 +24,7 @@
     - RecyclerView
     - RecyclerView Adapter
     - ViewHolder
+    - Animation
 ```
 
 ## Data
