@@ -53,7 +53,7 @@ class TaskListActivity : AppCompatActivity() {
             //})
 
             intent.putExtra("key_parcelable", Task().apply {
-                title = taskName
+                name = taskName
                 this.position = position
             })
 
@@ -81,14 +81,18 @@ class TaskListActivity : AppCompatActivity() {
         taskNameEditText.inputType = InputType.TYPE_CLASS_TEXT
 
         AlertDialog.Builder(this)
-                .setTitle("Add your task title.")
+                .setTitle("Add your task name.")
                 .setView(taskNameEditText)
+                .setCancelable(false)
                 .setPositiveButton("ADD") { dialog, _ ->
                     val newTaskName = taskNameEditText.text.toString()
                     if (newTaskName.isNotEmpty()) {
                         taskRecyclerViewAdapter.taskList.add(newTaskName)
                         taskRecyclerViewAdapter.notifyDataSetChanged()
                     }
+                    dialog.dismiss()
+                }
+                .setNegativeButton("Cancel") { dialog, _ ->
                     dialog.dismiss()
                 }
                 .create()

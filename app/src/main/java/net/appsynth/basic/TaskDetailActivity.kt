@@ -25,7 +25,7 @@ class TaskDetailActivity : AppCompatActivity() {
         //taskNameTextView.text = "$position $taskName"
 
         val task: Task = intent.getParcelableExtra("key_parcelable")
-        taskNameTextView.text = "${task.position} ${task.title}"
+        taskNameTextView.text = "${task.position} ${task.name}"
 
         cancelButton.setOnClickListener {
             setResult(Activity.RESULT_CANCELED)

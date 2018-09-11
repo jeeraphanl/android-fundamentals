@@ -5,16 +5,16 @@ import android.os.Parcelable
 
 class Task() : Parcelable {
 
-    var title: String? = null
+    var name: String? = null
     var position: Int? = null
 
     constructor(parcel: Parcel) : this() {
-        title = parcel.readString()
+        name = parcel.readString()
         position = parcel.readValue(Int::class.java.classLoader) as? Int
     }
 
     override fun writeToParcel(parcel: Parcel, flags: Int) {
-        parcel.writeString(title)
+        parcel.writeString(name)
         parcel.writeValue(position)
     }
 
