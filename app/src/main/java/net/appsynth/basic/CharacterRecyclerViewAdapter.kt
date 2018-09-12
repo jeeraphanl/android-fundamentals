@@ -15,7 +15,36 @@ class CharacterRecyclerViewAdapter : RecyclerView.Adapter<CharacterRecyclerViewA
                      characterNameTextView: TextView,
                      characterDescTextView: TextView) -> Unit)? = null
 
-    var characterList = mutableListOf<Character>()
+    var characterList = mutableListOf(
+            Character().apply {
+                thumb = R.drawable.monkey
+                name = "Monkey"
+                desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
+            }, Character().apply {
+                thumb = R.drawable.onion
+                name = "Onion"
+                desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
+            }
+//            , Character().apply {
+//                thumb = R.drawable.pineapple
+//                name = "Pineapple"
+//                desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
+//            }, Character().apply {
+//                thumb = R.drawable.sheep
+//                name = "Sheep"
+//                desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
+//            }, Character().apply {
+//                thumb = R.drawable.squid
+//                name = "Squid"
+//                desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
+//            }, Character().apply {
+//                thumb = R.drawable.lettuce
+//                name = "Lettuce"
+//                desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
+//            }
+    )
+
+    //var characterList = mutableListOf<Character>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_character, parent, false)
@@ -28,9 +57,11 @@ class CharacterRecyclerViewAdapter : RecyclerView.Adapter<CharacterRecyclerViewA
 
     override fun onBindViewHolder(holder: CharacterViewHolder, position: Int) {
         holder.itemView.apply {
-            characterThumbImageView
             characterNameTextView.text = characterList[position].name
             characterDescTextView.text = characterList[position].desc
+            characterList[position].thumb?.let {
+                characterThumbImageView.setImageResource(it)
+            }
 
             setOnClickListener {
                 itemClick?.invoke(characterList[position], characterThumbImageView, characterNameTextView, characterDescTextView)

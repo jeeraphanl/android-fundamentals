@@ -9,18 +9,26 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
 import android.text.InputType
+import android.util.Pair
 import android.view.View
 import android.widget.EditText
 import android.widget.ImageView
-import android.widget.Toast
-import android.util.Pair
 import android.widget.TextView
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_character_list.*
 import kotlinx.android.synthetic.main.content_character_list.*
+import java.util.*
 
 class CharacterListActivity : AppCompatActivity() {
 
     private lateinit var characterRecyclerViewAdapter: CharacterRecyclerViewAdapter
+    private val characterImageList = arrayListOf(
+            R.drawable.lettuce,
+            R.drawable.monkey,
+            R.drawable.onion,
+            R.drawable.pineapple,
+            R.drawable.sheep,
+            R.drawable.squid)
 
     @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -47,9 +55,9 @@ class CharacterListActivity : AppCompatActivity() {
         characterRecyclerViewAdapter = CharacterRecyclerViewAdapter()
 
         //set event click listener
-        characterRecyclerViewAdapter.itemClick = {character: Character,
-                                                  characterThumbImageView: ImageView,
-                                                  characterNameTextView: TextView,
+        characterRecyclerViewAdapter.itemClick = { character: Character,
+                                                   characterThumbImageView: ImageView,
+                                                   characterNameTextView: TextView,
                                                    characterDescTextView: TextView ->
 
             val options = ActivityOptions.makeSceneTransitionAnimation(this,
@@ -79,12 +87,14 @@ class CharacterListActivity : AppCompatActivity() {
         }
 
         characterRecyclerView.adapter = characterRecyclerViewAdapter
+
+        characterRecyclerViewAdapter.notifyDataSetChanged()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         if (requestCode == CharacterDetailActivity.REQUEST_CODE) {
-            when(resultCode) {
+            when (resultCode) {
                 Activity.RESULT_CANCELED -> Toast.makeText(this, "Cancel", Toast.LENGTH_LONG).show()
                 Activity.RESULT_OK -> Toast.makeText(this, "Ok", Toast.LENGTH_LONG).show()
             }
@@ -107,6 +117,9 @@ class CharacterListActivity : AppCompatActivity() {
                         val character = Character().apply {
                             name = newCharacterName
                             desc = getString(R.string.desc_character)
+                            val random = Random()
+                            val index = random.nextInt(characterImageList.size - 1)
+                            thumb = characterImageList[index]
                         }
 
                         characterRecyclerViewAdapter.characterList.add(character)

@@ -25,6 +25,10 @@ class CharacterDetailActivity : AppCompatActivity() {
 
         val character: Character = intent.getParcelableExtra("key_parcelable")
         characterNameTextView.text = character.name
+        characterDescTextView.text = character.desc
+        character.thumb?.let {
+            characterThumbImageView.setImageResource(it)
+        }
     }
 
     override fun finish() {
