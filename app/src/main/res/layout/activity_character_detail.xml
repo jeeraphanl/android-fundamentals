@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".CharacterDetailActivity">
+
+    <ImageView
+        android:id="@+id/characterThumbImageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/ic_launcher"
+        android:transitionName="characterThumbTransition" />
+
+    <TextView
+        android:id="@+id/characterNameTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/characterThumbImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:transitionName="characterNameTransition"
+        tools:text="Name" />
+
+    <TextView
+        android:id="@+id/characterDescTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/characterNameTextView"
+        android:layout_margin="32dp"
+        android:text="@string/desc_character"
+        android:transitionName="characterDescTransition" />
+
+</RelativeLayout>

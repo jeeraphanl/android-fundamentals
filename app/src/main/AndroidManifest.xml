@@ -10,8 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".TaskListActivity"
-            android:label="@string/title_activity_task_list"
+            android:name=".CharacterListActivity"
+            android:label="@string/title_activity_character_list"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,7 +19,7 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".TaskDetailActivity" />
+        <activity android:name=".CharacterDetailActivity" />
     </application>
 
 </manifest>
