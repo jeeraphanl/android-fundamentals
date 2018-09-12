@@ -2,13 +2,15 @@
 <FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/containerFrameLayout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/colorNoon">
 
     <ImageView
         android:id="@+id/falconImageView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:layout_gravity="bottom|center_horizontal"
-        android:src="@drawable/ic_launcher_foreground" />
+        android:layout_marginBottom="24dp"
+        android:src="@drawable/onion" />
 
 </FrameLayout>
