@@ -1,23 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="50dp"
+    android:layout_height="wrap_content"
     android:foreground="?android:attr/selectableItemBackground">
+
+    <ImageView
+        android:id="@+id/foodThumbImageView"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
+        android:layout_margin="8dp"
+        android:src="@drawable/cheese_cake" />
 
     <TextView
         android:id="@+id/foodNameTextView"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="8dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
-        android:gravity="left|center_vertical"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_toRightOf="@+id/foodThumbImageView"
+        android:ellipsize="end"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:text="Food name" />
+
+    <TextView
+        android:id="@+id/foodDescTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/foodNameTextView"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_toRightOf="@+id/foodThumbImageView"
+        android:ellipsize="end"
+        android:maxLines="2"
+        android:text="Description" />
+</RelativeLayout>

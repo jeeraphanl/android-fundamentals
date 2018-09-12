@@ -5,10 +5,31 @@
     android:layout_height="match_parent"
     tools:context=".FoodDetailFragment">
 
+    <ImageView
+        android:id="@+id/foodThumbImageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:scaleType="fitCenter"
+        android:src="@mipmap/ic_launcher" />
+
     <TextView
         android:id="@+id/foodNameTextView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_centerInParent="true" />
+        android:layout_below="@+id/foodThumbImageView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="32dp"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        tools:text="Name" />
+
+    <TextView
+        android:id="@+id/foodDescTextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/foodNameTextView"
+        android:layout_margin="32dp"
+        android:text="Desc"
+        android:transitionName="characterDescTransition" />
 
 </RelativeLayout>

@@ -8,9 +8,25 @@ import kotlinx.android.synthetic.main.item_food.view.*
 
 class FoodRecyclerViewAdapter : RecyclerView.Adapter<FoodRecyclerViewAdapter.FoodViewHolder>() {
 
-    var itemClick: ((index: Int, foodName: String) -> Unit)? = null
+    var itemClick: ((food: Food) -> Unit)? = null
 
-    var foodList = mutableListOf("Knight", "Golem", "Baby Dragon", "Wizard")
+    var foodList = mutableListOf(Food().apply {
+        name = "Apple"
+        thumb = R.drawable.apple
+        desc
+    }, Food().apply {
+        name = "Butter popcorn"
+        thumb = R.drawable.butter_popcorn
+        desc
+    }, Food().apply {
+        name = "Cheese cake"
+        thumb = R.drawable.cheese_cake
+        desc
+    }, Food().apply {
+        name = "Chocolate cake"
+        thumb = R.drawable.chocolate_cake
+        desc
+    })
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_food, parent, false)
@@ -23,10 +39,14 @@ class FoodRecyclerViewAdapter : RecyclerView.Adapter<FoodRecyclerViewAdapter.Foo
 
     override fun onBindViewHolder(holder: FoodViewHolder, position: Int) {
         holder.itemView.apply {
-            foodNameTextView.text = foodList[position]
+            foodNameTextView.text = foodList[position].name
+            foodDescTextView.text = foodList[position].desc
+            foodList[position].thumb?.let {
+                foodThumbImageView.setImageResource(it)
+            }
 
             setOnClickListener {
-                itemClick?.invoke(position, foodList[position])
+                itemClick?.invoke(foodList[position])
             }
         }
     }

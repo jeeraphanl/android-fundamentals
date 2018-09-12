@@ -6,11 +6,30 @@ import android.support.v7.app.AppCompatActivity
 import android.text.InputType
 import android.widget.EditText
 import kotlinx.android.synthetic.main.activity_food_list.*
+import java.util.*
 
 class FoodListActivity : AppCompatActivity(), FoodListFragment.OnListItemFragmentInteractionListener {
 
     private var isLargeScreen = false
     private var foodListFragment: FoodListFragment? = null
+
+    private val foodImageList = arrayListOf(
+            R.drawable.apple,
+            R.drawable.butter_popcorn,
+            R.drawable.cheese_cake,
+            R.drawable.chocolate_cake,
+            R.drawable.chocolate_frappe,
+            R.drawable.hotdog,
+            R.drawable.kiwi,
+            R.drawable.magnum,
+            R.drawable.nugget,
+            R.drawable.orange,
+            R.drawable.porkchop,
+            R.drawable.potato_chips,
+            R.drawable.roasted_chicken,
+            R.drawable.sugar_doughnut,
+            R.drawable.sugar_free_gum,
+            R.drawable.watermelon)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -31,11 +50,11 @@ class FoodListActivity : AppCompatActivity(), FoodListFragment.OnListItemFragmen
     /**
      * OnListItemFragmentInteractionListener
      */
-    override fun onListItemClicked(position: Int, foodName: String) {
+    override fun onListItemClicked(food: Food) {
         if (isLargeScreen) {
             supportFragmentManager.beginTransaction()
                     .replace(R.id.containerFoodDetailFrameLayout,
-                            FoodDetailFragment.newInstance(foodName, position), "TAG_FOOD_DETAIL")
+                            FoodDetailFragment.newInstance(food), "TAG_FOOD_DETAIL")
                     .commit()
         } else {
             supportFragmentManager.beginTransaction()
@@ -45,7 +64,7 @@ class FoodListActivity : AppCompatActivity(), FoodListFragment.OnListItemFragmen
                             R.anim.enter_from_left,
                             R.anim.exit_to_right)
                     .replace(R.id.containerFoodListFrameLayout,
-                            FoodDetailFragment.newInstance(foodName, position), "TAG_FOOD_DETAIL")
+                            FoodDetailFragment.newInstance(food), "TAG_FOOD_DETAIL")
                     .addToBackStack(null)
                     .commit()
         }
@@ -63,7 +82,15 @@ class FoodListActivity : AppCompatActivity(), FoodListFragment.OnListItemFragmen
                 .setPositiveButton("ADD") { dialog, _ ->
                     val newFoodName = foodNameEditText.text.toString()
                     if (newFoodName.isNotEmpty()) {
-                        foodListFragment?.addFoodList(newFoodName)
+                        val random = Random()
+                        val index = random.nextInt(foodImageList.size - 1)
+                        val food = Food().apply {
+                            name = newFoodName
+                            desc = "Decs"
+                            thumb = foodImageList[index]
+                        }
+
+                        foodListFragment?.addFoodList(food)
                     }
                     dialog.dismiss()
                 }

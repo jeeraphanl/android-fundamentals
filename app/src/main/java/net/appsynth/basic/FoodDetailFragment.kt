@@ -13,13 +13,17 @@ class FoodDetailFragment : Fragment() {
     companion object {
 
         const val KEY_FOOD_NAME = "kFoodName"
-        const val KEY_POSITION = "kPosition"
+        const val KEY_FOOD_DESC = "kDesc"
+        const val KEY_FOOD_THUMB = "kThumb"
 
-        fun newInstance(foodName: String, position: Int): FoodDetailFragment {
+        fun newInstance(food: Food): FoodDetailFragment {
             return FoodDetailFragment().apply {
                 arguments = Bundle().apply {
-                    putString(KEY_FOOD_NAME, foodName)
-                    putInt(KEY_POSITION, position)
+                    putString(KEY_FOOD_NAME, food.name)
+                    putString(KEY_FOOD_DESC, food.desc)
+                    food.thumb?.let {
+                        putInt(KEY_FOOD_THUMB, it)
+                    }
                 }
             }
         }
@@ -33,8 +37,14 @@ class FoodDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        val position: Int = arguments?.getInt(KEY_POSITION) ?: 0
         val foodName = arguments?.getString(KEY_FOOD_NAME)
-        foodNameTextView.text = "$position $foodName"
+        val foodDesc = arguments?.getString(KEY_FOOD_DESC)
+        val foodThumb = arguments?.getInt(KEY_FOOD_THUMB)
+
+        foodNameTextView.text = foodName
+        foodDescTextView.text = foodDesc
+        foodThumb?.let {
+            foodThumbImageView.setImageResource(it)
+        }
     }
 }

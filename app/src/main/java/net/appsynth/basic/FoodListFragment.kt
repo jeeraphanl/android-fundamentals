@@ -13,7 +13,7 @@ import kotlinx.android.synthetic.main.fragment_food_list.*
 class FoodListFragment : Fragment() {
 
     interface OnListItemFragmentInteractionListener {
-        fun onListItemClicked(position: Int, foodName: String)
+        fun onListItemClicked(food: Food)
     }
 
     private var listener: OnListItemFragmentInteractionListener? = null
@@ -60,8 +60,8 @@ class FoodListFragment : Fragment() {
          */
         foodRecyclerViewAdapter = FoodRecyclerViewAdapter()
         //set event click listener
-        foodRecyclerViewAdapter.itemClick = { position: Int, foodName: String ->
-            listener?.onListItemClicked(position, foodName)
+        foodRecyclerViewAdapter.itemClick = { food: Food ->
+            listener?.onListItemClicked(food)
         }
 
         foodRecyclerView.adapter = foodRecyclerViewAdapter
@@ -88,8 +88,8 @@ class FoodListFragment : Fragment() {
         listener = null
     }
 
-    internal fun addFoodList(foodName: String) {
-        foodRecyclerViewAdapter.foodList.add(foodName)
+    internal fun addFoodList(food: Food) {
+        foodRecyclerViewAdapter.foodList.add(food)
         foodRecyclerViewAdapter.notifyDataSetChanged()
     }
 }
