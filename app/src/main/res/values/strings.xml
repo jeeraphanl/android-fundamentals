@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">basic-android</string>
+    <string name="app_name">Layout</string>
     <string name="login">Login</string>
     <string name="login_hint">m@m.com</string>
 </resources>
