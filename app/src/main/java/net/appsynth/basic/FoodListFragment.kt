@@ -8,20 +8,20 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import kotlinx.android.synthetic.main.fragment_task_list.*
+import kotlinx.android.synthetic.main.fragment_food_list.*
 
-class TaskListFragment : Fragment() {
+class FoodListFragment : Fragment() {
 
     interface OnListItemFragmentInteractionListener {
-        fun onListItemClicked(position: Int, taskName: String)
+        fun onListItemClicked(position: Int, foodName: String)
     }
 
     private var listener: OnListItemFragmentInteractionListener? = null
-    private lateinit var taskRecyclerViewAdapter: TaskRecyclerViewAdapter
+    private lateinit var foodRecyclerViewAdapter: FoodRecyclerViewAdapter
 
     companion object {
-        fun newInstance(): TaskListFragment {
-            return TaskListFragment()
+        fun newInstance(): FoodListFragment {
+            return FoodListFragment()
         }
     }
 
@@ -40,7 +40,7 @@ class TaskListFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.fragment_task_list, container, false)
+        return inflater.inflate(R.layout.fragment_food_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -52,19 +52,19 @@ class TaskListFragment : Fragment() {
          * LinearLayoutManager isn’t the only layout provided by RecyclerView. Out of the box,
          * RecyclerView provides the GridLayoutManager and StaggeredGridLayoutManager.
          */
-        taskRecyclerView.layoutManager = LinearLayoutManager(context)
+        foodRecyclerView.layoutManager = LinearLayoutManager(context)
 
         /**
          * step 2
          * Set adapter RecyclerView
          */
-        taskRecyclerViewAdapter = TaskRecyclerViewAdapter()
+        foodRecyclerViewAdapter = FoodRecyclerViewAdapter()
         //set event click listener
-        taskRecyclerViewAdapter.itemClick = { position: Int, taskName: String ->
-            listener?.onListItemClicked(position, taskName)
+        foodRecyclerViewAdapter.itemClick = { position: Int, foodName: String ->
+            listener?.onListItemClicked(position, foodName)
         }
 
-        taskRecyclerView.adapter = taskRecyclerViewAdapter
+        foodRecyclerView.adapter = foodRecyclerViewAdapter
     }
 
     override fun onSaveInstanceState(outState: Bundle) {
@@ -88,8 +88,8 @@ class TaskListFragment : Fragment() {
         listener = null
     }
 
-    internal fun addTaskList(taskName: String) {
-        taskRecyclerViewAdapter.taskList.add(taskName)
-        taskRecyclerViewAdapter.notifyDataSetChanged()
+    internal fun addFoodList(foodName: String) {
+        foodRecyclerViewAdapter.foodList.add(foodName)
+        foodRecyclerViewAdapter.notifyDataSetChanged()
     }
 }

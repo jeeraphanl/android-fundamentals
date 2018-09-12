@@ -5,37 +5,37 @@ import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.text.InputType
 import android.widget.EditText
-import kotlinx.android.synthetic.main.activity_task_list.*
+import kotlinx.android.synthetic.main.activity_food_list.*
 
-class TaskListActivity : AppCompatActivity(), TaskListFragment.OnListItemFragmentInteractionListener {
+class FoodListActivity : AppCompatActivity(), FoodListFragment.OnListItemFragmentInteractionListener {
 
     private var isLargeScreen = false
-    private var taskListFragment: TaskListFragment? = null
+    private var foodListFragment: FoodListFragment? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_task_list)
+        setContentView(R.layout.activity_food_list)
 
-        isLargeScreen = containerTaskDetailFrameLayout != null
-        taskListFragment = TaskListFragment.newInstance()
+        isLargeScreen = containerFoodDetailFrameLayout != null
+        foodListFragment = FoodListFragment.newInstance()
 
         supportFragmentManager.beginTransaction()
-                .replace(R.id.containerTaskListFrameLayout, taskListFragment, "TAG_TASK_LIST")
+                .replace(R.id.containerFoodListFrameLayout, foodListFragment, "TAG_FOOD_LIST")
                 .commit()
 
         floatingActionButton.setOnClickListener {
-            showAddTaskDialog()
+            showAddFoodDialog()
         }
     }
 
     /**
      * OnListItemFragmentInteractionListener
      */
-    override fun onListItemClicked(position: Int, taskName: String) {
+    override fun onListItemClicked(position: Int, foodName: String) {
         if (isLargeScreen) {
             supportFragmentManager.beginTransaction()
-                    .replace(R.id.containerTaskDetailFrameLayout,
-                            TaskDetailFragment.newInstance(taskName, position), "TAG_TASK_DETAIL")
+                    .replace(R.id.containerFoodDetailFrameLayout,
+                            FoodDetailFragment.newInstance(foodName, position), "TAG_FOOD_DETAIL")
                     .commit()
         } else {
             supportFragmentManager.beginTransaction()
@@ -44,26 +44,26 @@ class TaskListActivity : AppCompatActivity(), TaskListFragment.OnListItemFragmen
                             R.anim.exit_to_left,
                             R.anim.enter_from_left,
                             R.anim.exit_to_right)
-                    .replace(R.id.containerTaskListFrameLayout,
-                            TaskDetailFragment.newInstance(taskName, position), "TAG_TASK_DETAIL")
+                    .replace(R.id.containerFoodListFrameLayout,
+                            FoodDetailFragment.newInstance(foodName, position), "TAG_FOOD_DETAIL")
                     .addToBackStack(null)
                     .commit()
         }
     }
 
-    private fun showAddTaskDialog() {
+    private fun showAddFoodDialog() {
 
-        val taskNameEditText = EditText(this)
-        taskNameEditText.inputType = InputType.TYPE_CLASS_TEXT
+        val foodNameEditText = EditText(this)
+        foodNameEditText.inputType = InputType.TYPE_CLASS_TEXT
 
         AlertDialog.Builder(this)
-                .setTitle("Add your task name.")
-                .setView(taskNameEditText)
+                .setTitle("Add your food name.")
+                .setView(foodNameEditText)
                 .setCancelable(false)
                 .setPositiveButton("ADD") { dialog, _ ->
-                    val newTaskName = taskNameEditText.text.toString()
-                    if (newTaskName.isNotEmpty()) {
-                        taskListFragment?.addTaskList(newTaskName)
+                    val newFoodName = foodNameEditText.text.toString()
+                    if (newFoodName.isNotEmpty()) {
+                        foodListFragment?.addFoodList(newFoodName)
                     }
                     dialog.dismiss()
                 }
