@@ -26,6 +26,8 @@ class NewsRecyclerViewAdapter : RecyclerView.Adapter<NewsRecyclerViewAdapter.New
 
             Picasso.get()
                     .load(article.urlToImage)
+                    .placeholder(R.drawable.place_holder)
+                    .error(R.drawable.place_holder)
                     .into(coverImageView)
         }
     }
