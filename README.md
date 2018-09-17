@@ -2,7 +2,7 @@
 ## View group
 ```
     - LinearLayout (Horizontal, Vertical)
-    - RelaytiveLayout
+    - RelativeLayout
     - FramLayout
     - ConstraintLayout
 ```
