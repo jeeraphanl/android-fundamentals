@@ -1,0 +1,6 @@
+<resources>
+    <dimen name="icon_width">25dp</dimen>
+    <dimen name="icon_height">25dp</dimen>
+    <dimen name="margin_icon">12dp</dimen>
+    <dimen name="margin_parent">16dp</dimen>
+</resources>
