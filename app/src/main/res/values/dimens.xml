@@ -3,4 +3,5 @@
     <dimen name="icon_height">25dp</dimen>
     <dimen name="margin_icon">12dp</dimen>
     <dimen name="margin_parent">16dp</dimen>
+    <dimen name="font_size">18sp</dimen>
 </resources>

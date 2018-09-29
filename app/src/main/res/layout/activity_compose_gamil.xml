@@ -25,7 +25,7 @@
             android:layout_toRightOf="@+id/backImageView"
             android:text="Compose"
             android:textColor="@android:color/black"
-            android:textSize="20sp"
+            android:textSize="@dimen/font_size"
             android:textStyle="bold" />
 
         <ImageView
@@ -69,7 +69,7 @@
             android:layout_centerVertical="true"
             android:text="From: "
             android:textColor="@android:color/darker_gray"
-            android:textStyle="bold" />
+            android:textSize="@dimen/font_size" />
 
         <ImageView
             android:id="@+id/downArrowImageView"
@@ -101,8 +101,8 @@
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
             android:text="To: "
-            android:textColor="@android:color/darker_gray"
-            android:textStyle="bold" />
+            android:textSize="@dimen/font_size"
+            android:textColor="@android:color/darker_gray" />
 
         <ImageView
             android:id="@+id/toDownArrowImageView"
@@ -129,15 +129,17 @@
         android:layout_marginLeft="@dimen/margin_parent"
         android:layout_marginRight="@dimen/margin_parent"
         android:background="@android:color/transparent"
+        android:textSize="@dimen/font_size"
         android:hint="Subject" />
 
     <EditText
         android:layout_width="match_parent"
-        android:layout_height="60dp"
+        android:layout_height="match_parent"
         android:layout_marginLeft="@dimen/margin_parent"
         android:layout_marginTop="@dimen/margin_icon"
         android:layout_marginRight="@dimen/margin_parent"
         android:background="@android:color/transparent"
+        android:textSize="@dimen/font_size"
         android:gravity="left|top"
         android:hint="Compose email" />
 
