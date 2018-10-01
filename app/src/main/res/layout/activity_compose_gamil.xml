@@ -14,16 +14,16 @@
             android:layout_width="@dimen/icon_width"
             android:layout_height="@dimen/icon_height"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/margin_parent"
+            android:layout_marginStart="@dimen/margin_parent"
             android:src="@drawable/ic_back" />
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_marginLeft="@dimen/margin_icon"
-            android:layout_toRightOf="@+id/backImageView"
-            android:text="Compose"
+            android:layout_marginStart="@dimen/margin_icon"
+            android:layout_toEndOf="@+id/backImageView"
+            android:text="@string/compose"
             android:textColor="@android:color/background_dark"
             android:textSize="@dimen/font_size"
             android:textStyle="bold" />
@@ -33,16 +33,16 @@
             android:layout_width="@dimen/icon_width"
             android:layout_height="@dimen/icon_height"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/margin_icon"
-            android:layout_alignParentRight="true"
+            android:layout_marginEnd="@dimen/margin_icon"
+            android:layout_alignParentEnd="true"
             android:src="@drawable/ic_send" />
 
         <ImageView
             android:layout_width="@dimen/icon_width"
             android:layout_height="@dimen/icon_height"
             android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/margin_icon"
-            android:layout_toLeftOf="@+id/cursorImageView"
+            android:layout_marginEnd="@dimen/margin_icon"
+            android:layout_toStartOf="@+id/cursorImageView"
             android:src="@drawable/ic_attach" />
 
     </RelativeLayout>
@@ -50,15 +50,15 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginLeft="@dimen/margin_parent"
-        android:layout_marginRight="@dimen/margin_parent">
+        android:layout_marginStart="@dimen/margin_parent"
+        android:layout_marginEnd="@dimen/margin_parent">
 
         <TextView
             android:id="@+id/fromTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="From: "
+            android:text="@string/from"
             android:textColor="@android:color/darker_gray"
             android:textSize="@dimen/font_size" />
 
@@ -66,7 +66,7 @@
             android:id="@+id/downArrowImageView"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:src="@drawable/ic_down_arrow" />
 
@@ -74,8 +74,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@id/downArrowImageView"
-            android:layout_toRightOf="@id/fromTextView"
+            android:layout_toStartOf="@id/downArrowImageView"
+            android:layout_toEndOf="@id/fromTextView"
             android:background="@android:color/transparent" />
 
     </RelativeLayout>
@@ -83,15 +83,15 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_marginLeft="@dimen/margin_parent"
-        android:layout_marginRight="@dimen/margin_parent">
+        android:layout_marginStart="@dimen/margin_parent"
+        android:layout_marginEnd="@dimen/margin_parent">
 
         <TextView
             android:id="@+id/toTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:text="To: "
+            android:text="@string/to"
             android:textSize="@dimen/font_size"
             android:textColor="@android:color/darker_gray" />
 
@@ -99,7 +99,7 @@
             android:id="@+id/toDownArrowImageView"
             android:layout_width="20dp"
             android:layout_height="20dp"
-            android:layout_alignParentRight="true"
+            android:layout_alignParentEnd="true"
             android:layout_centerVertical="true"
             android:src="@drawable/ic_down_arrow" />
 
@@ -107,8 +107,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_centerVertical="true"
-            android:layout_toLeftOf="@id/toDownArrowImageView"
-            android:layout_toRightOf="@id/toTextView"
+            android:layout_toStartOf="@id/toDownArrowImageView"
+            android:layout_toEndOf="@id/toTextView"
             android:background="@android:color/transparent" />
 
     </RelativeLayout>
@@ -116,23 +116,22 @@
     <EditText
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:layout_centerVertical="true"
-        android:layout_marginLeft="@dimen/margin_parent"
-        android:layout_marginRight="@dimen/margin_parent"
+        android:layout_marginStart="@dimen/margin_parent"
+        android:layout_marginEnd="@dimen/margin_parent"
         android:background="@android:color/transparent"
         android:textSize="@dimen/font_size"
-        android:hint="Subject" />
+        android:hint="@string/subject" />
 
     <EditText
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="@dimen/margin_parent"
+        android:layout_marginStart="@dimen/margin_parent"
         android:layout_marginTop="@dimen/margin_icon"
-        android:layout_marginRight="@dimen/margin_parent"
+        android:layout_marginEnd="@dimen/margin_parent"
         android:layout_marginBottom="@dimen/margin_parent"
         android:background="@android:color/transparent"
         android:textSize="@dimen/font_size"
-        android:gravity="left|top"
-        android:hint="Compose email" />
+        android:gravity="start|top"
+        android:hint="@string/compose_email" />
 
 </LinearLayout>
