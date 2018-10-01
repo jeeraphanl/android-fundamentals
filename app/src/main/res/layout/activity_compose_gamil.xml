@@ -7,7 +7,7 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="60dp"
-        android:background="@color/colorPrimary">
+        android:background="@color/colorPinkLight">
 
         <ImageView
             android:id="@+id/backImageView"
@@ -15,7 +15,7 @@
             android:layout_height="@dimen/icon_height"
             android:layout_centerVertical="true"
             android:layout_marginLeft="@dimen/margin_parent"
-            android:src="@drawable/left_arrow" />
+            android:src="@drawable/ic_back" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -24,18 +24,9 @@
             android:layout_marginLeft="@dimen/margin_icon"
             android:layout_toRightOf="@+id/backImageView"
             android:text="Compose"
-            android:textColor="@android:color/black"
+            android:textColor="@android:color/background_dark"
             android:textSize="@dimen/font_size"
             android:textStyle="bold" />
-
-        <ImageView
-            android:id="@+id/menuImageView"
-            android:layout_width="@dimen/icon_width"
-            android:layout_height="@dimen/icon_height"
-            android:layout_alignParentRight="true"
-            android:layout_centerVertical="true"
-            android:layout_marginRight="@dimen/margin_parent"
-            android:src="@drawable/menu" />
 
         <ImageView
             android:id="@+id/cursorImageView"
@@ -43,8 +34,8 @@
             android:layout_height="@dimen/icon_height"
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/margin_icon"
-            android:layout_toLeftOf="@+id/menuImageView"
-            android:src="@drawable/cursor" />
+            android:layout_alignParentRight="true"
+            android:src="@drawable/ic_send" />
 
         <ImageView
             android:layout_width="@dimen/icon_width"
@@ -52,7 +43,7 @@
             android:layout_centerVertical="true"
             android:layout_marginRight="@dimen/margin_icon"
             android:layout_toLeftOf="@+id/cursorImageView"
-            android:src="@drawable/clip" />
+            android:src="@drawable/ic_attach" />
 
     </RelativeLayout>
 
@@ -77,7 +68,7 @@
             android:layout_height="20dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/down_arrow" />
+            android:src="@drawable/ic_down_arrow" />
 
         <EditText
             android:layout_width="match_parent"
@@ -110,7 +101,7 @@
             android:layout_height="20dp"
             android:layout_alignParentRight="true"
             android:layout_centerVertical="true"
-            android:src="@drawable/down_arrow" />
+            android:src="@drawable/ic_down_arrow" />
 
         <EditText
             android:layout_width="match_parent"
@@ -138,6 +129,7 @@
         android:layout_marginLeft="@dimen/margin_parent"
         android:layout_marginTop="@dimen/margin_icon"
         android:layout_marginRight="@dimen/margin_parent"
+        android:layout_marginBottom="@dimen/margin_parent"
         android:background="@android:color/transparent"
         android:textSize="@dimen/font_size"
         android:gravity="left|top"
