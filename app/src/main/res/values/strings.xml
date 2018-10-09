@@ -8,4 +8,26 @@
     <string name="title_activity_character_list">CharacterListActivity</string>
     <string name="desc_character">To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here.</string>
     <string name="title_activity_main">MainActivity</string>
+    
+    <string name="zero">0</string>
+    <string name="ac">AC</string>
+    <string name="plus_slash_minus">+/-</string>
+    <string name="percent">%</string>
+    <string name="division">/</string>
+    <string name="dot">.</string>
+    <string name="times">X</string>
+    <string name="minus">-</string>
+    <string name="plus">+</string>
+    <string name="equals">=</string>
+    <string name="one">1</string>
+    <string name="two">2</string>
+    <string name="three">3</string>
+    <string name="four">4</string>
+    <string name="five">5</string>
+    <string name="six">6</string>
+    <string name="seven">7</string>
+    <string name="eight">8</string>
+    <string name="nine">9</string>
+
+
 </resources>
