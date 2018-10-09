@@ -15,10 +15,10 @@
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_alignParentRight="true"
-            android:layout_marginRight="16dp"
-            android:text="0"
+            android:layout_marginEnd="16dp"
+            android:text="@string/zero"
             android:textColor="@android:color/white"
             android:textSize="72sp" />
 
@@ -27,35 +27,38 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:layout_marginBottom="1dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp"
             android:layout_weight="1"
             android:background="@color/colorGrayCal"
-            android:text="AC"
+            android:text="@string/ac"
+            android:textColor="@android:color/background_dark"
             android:textSize="28sp" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp"
             android:layout_weight="1"
             android:background="@color/colorGrayCal"
-            android:text="+/-"
+            android:text="@string/plus_slash_minus"
+            android:textColor="@android:color/background_dark"
             android:textSize="28sp" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp"
             android:layout_weight="1"
             android:background="@color/colorGrayCal"
-            android:text="%"
+            android:text="@string/percent"
+            android:textColor="@android:color/background_dark"
             android:textSize="28sp" />
 
         <Button
@@ -65,7 +68,7 @@
             android:layout_marginRight="1dp"
             android:layout_weight="1"
             android:background="@color/colorOrangeCal"
-            android:text="/"
+            android:text="@string/division"
             android:textColor="@android:color/white"
             android:textSize="28sp" />
 
@@ -74,35 +77,38 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:layout_marginBottom="1dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp"
             android:layout_weight="1"
             android:background="@color/colorGrayCal"
-            android:text="7"
+            android:text="@string/seven"
+            android:textColor="@android:color/background_dark"
             android:textSize="28sp" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp"
             android:layout_weight="1"
             android:background="@color/colorGrayCal"
-            android:text="8"
+            android:text="@string/eight"
+            android:textColor="@android:color/background_dark"
             android:textSize="28sp" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp"
             android:layout_weight="1"
             android:background="@color/colorGrayCal"
-            android:text="9"
+            android:text="@string/nine"
+            android:textColor="@android:color/background_dark"
             android:textSize="28sp" />
 
         <Button
@@ -112,7 +118,7 @@
             android:layout_marginRight="1dp"
             android:layout_weight="1"
             android:background="@color/colorOrangeCal"
-            android:text="X"
+            android:text="@string/times"
             android:textColor="@android:color/white"
             android:textSize="28sp" />
 
@@ -121,35 +127,38 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:layout_marginBottom="1dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp"
             android:layout_weight="1"
             android:background="@color/colorGrayCal"
-            android:text="4"
+            android:text="@string/four"
+            android:textColor="@android:color/background_dark"
             android:textSize="28sp" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp"
             android:layout_weight="1"
             android:background="@color/colorGrayCal"
-            android:text="5"
+            android:text="@string/five"
+            android:textColor="@android:color/background_dark"
             android:textSize="28sp" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp"
             android:layout_weight="1"
             android:background="@color/colorGrayCal"
-            android:text="6"
+            android:text="@string/six"
+            android:textColor="@android:color/background_dark"
             android:textSize="28sp" />
 
         <Button
@@ -159,7 +168,7 @@
             android:layout_marginRight="1dp"
             android:layout_weight="1"
             android:background="@color/colorOrangeCal"
-            android:text="-"
+            android:text="@string/minus"
             android:textColor="@android:color/white"
             android:textSize="28sp" />
 
@@ -168,35 +177,38 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:layout_marginBottom="1dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp"
             android:layout_weight="1"
             android:background="@color/colorGrayCal"
-            android:text="1"
+            android:text="@string/one"
+            android:textColor="@android:color/background_dark"
             android:textSize="28sp" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp"
             android:layout_weight="1"
             android:background="@color/colorGrayCal"
-            android:text="2"
+            android:text="@string/two"
+            android:textColor="@android:color/background_dark"
             android:textSize="28sp" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp"
             android:layout_weight="1"
             android:background="@color/colorGrayCal"
-            android:text="3"
+            android:text="@string/three"
+            android:textColor="@android:color/background_dark"
             android:textSize="28sp" />
 
         <Button
@@ -206,7 +218,7 @@
             android:layout_marginRight="1dp"
             android:layout_weight="1"
             android:background="@color/colorOrangeCal"
-            android:text="+"
+            android:text="@string/plus"
             android:textColor="@android:color/white"
             android:textSize="28sp" />
 
@@ -215,26 +227,28 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_weight="1"
         android:layout_marginBottom="1dp"
+        android:layout_weight="1"
         android:orientation="horizontal">
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp"
             android:layout_weight="2"
             android:background="@color/colorGrayCal"
-            android:text="0"
+            android:text="@string/zero"
+            android:textColor="@android:color/background_dark"
             android:textSize="28sp" />
 
         <Button
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:layout_marginLeft="1dp"
+            android:layout_marginStart="1dp"
             android:layout_weight="1"
             android:background="@color/colorGrayCal"
-            android:text="."
+            android:text="@string/dot"
+            android:textColor="@android:color/background_dark"
             android:textSize="28sp" />
 
         <Button
@@ -244,7 +258,7 @@
             android:layout_marginRight="1dp"
             android:layout_weight="1"
             android:background="@color/colorOrangeCal"
-            android:text="="
+            android:text="@string/equals"
             android:textColor="@android:color/white"
             android:textSize="28sp" />
 
