@@ -13,7 +13,8 @@ class CharacterRecyclerViewAdapter : RecyclerView.Adapter<CharacterRecyclerViewA
     var itemClick: ((character: Character,
                      characterThumbImageView: ImageView,
                      characterNameTextView: TextView,
-                     characterDescTextView: TextView) -> Unit)? = null
+                     characterDescTextView: TextView
+    ) -> Unit)? = null
 
     var characterList = mutableListOf(
             Character().apply {
@@ -26,6 +27,12 @@ class CharacterRecyclerViewAdapter : RecyclerView.Adapter<CharacterRecyclerViewA
                 desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
             }
     )
+
+    // Provide a reference to the views for each data item
+    // Complex data items may need more than one view per item, and
+    // you provide access to all the views for a data item in a view holder.
+    // Each data item is just a string in this case that is shown in a TextView.
+    inner class CharacterViewHolder(view: View?) : RecyclerView.ViewHolder(view)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CharacterViewHolder {
 
@@ -51,10 +58,4 @@ class CharacterRecyclerViewAdapter : RecyclerView.Adapter<CharacterRecyclerViewA
 
     // Return the size of your dataset (invoked by the layout manager)
     override fun getItemCount() = characterList.size
-
-    // Provide a reference to the views for each data item
-    // Complex data items may need more than one view per item, and
-    // you provide access to all the views for a data item in a view holder.
-    // Each data item is just a string in this case that is shown in a TextView.
-    inner class CharacterViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView)
 }
