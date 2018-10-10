@@ -16,7 +16,6 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_character_list.*
-import kotlinx.android.synthetic.main.content_character_list.*
 import java.util.*
 
 class CharacterListActivity : AppCompatActivity() {
@@ -34,9 +33,8 @@ class CharacterListActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_character_list)
-        setSupportActionBar(toolbar)
 
-        floatingActionButton.setOnClickListener {
+        addButton.setOnClickListener {
             showAddCharacterDialog()
         }
 
