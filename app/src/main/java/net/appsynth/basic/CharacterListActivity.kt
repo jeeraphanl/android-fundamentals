@@ -8,6 +8,7 @@ import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.LinearLayoutManager
+import android.support.v7.widget.RecyclerView
 import android.text.InputType
 import android.util.Pair
 import android.view.View
@@ -20,7 +21,6 @@ import java.util.*
 
 class CharacterListActivity : AppCompatActivity() {
 
-    private lateinit var characterRecyclerViewAdapter: CharacterRecyclerViewAdapter
     private val characterImageList = arrayListOf(
             R.drawable.lettuce,
             R.drawable.monkey,
@@ -28,6 +28,9 @@ class CharacterListActivity : AppCompatActivity() {
             R.drawable.pineapple,
             R.drawable.sheep,
             R.drawable.squid)
+
+    private lateinit var viewAdapter: CharacterRecyclerViewAdapter
+    private lateinit var viewManager: RecyclerView.LayoutManager
 
     @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -44,16 +47,22 @@ class CharacterListActivity : AppCompatActivity() {
          * LinearLayoutManager isn’t the only layout provided by RecyclerView. Out of the box,
          * RecyclerView provides the GridLayoutManager and StaggeredGridLayoutManager.
          */
-        characterRecyclerView.layoutManager = LinearLayoutManager(this)
+        viewManager = LinearLayoutManager(this)
 
         /**
          * step 2
          * Set adapter RecyclerView
          */
-        characterRecyclerViewAdapter = CharacterRecyclerViewAdapter()
+        viewAdapter = CharacterRecyclerViewAdapter()
+
+        characterRecyclerView.apply {
+            setHasFixedSize(true)
+            layoutManager = viewManager
+            adapter = viewAdapter
+        }
 
         //set event click listener
-        characterRecyclerViewAdapter.itemClick = { character: Character,
+        viewAdapter.itemClick = { character: Character,
                                                    characterThumbImageView: ImageView,
                                                    characterNameTextView: TextView,
                                                    characterDescTextView: TextView ->
@@ -84,9 +93,9 @@ class CharacterListActivity : AppCompatActivity() {
             overridePendingTransition(R.anim.fade_in, R.anim.fade_out)
         }
 
-        characterRecyclerView.adapter = characterRecyclerViewAdapter
+        characterRecyclerView.adapter = viewAdapter
 
-        characterRecyclerViewAdapter.notifyDataSetChanged()
+        viewAdapter.notifyDataSetChanged()
     }
 
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
@@ -120,8 +129,8 @@ class CharacterListActivity : AppCompatActivity() {
                             thumb = characterImageList[index]
                         }
 
-                        characterRecyclerViewAdapter.characterList.add(character)
-                        characterRecyclerViewAdapter.notifyDataSetChanged()
+                        viewAdapter.characterList.add(character)
+                        viewAdapter.notifyDataSetChanged()
                     }
                     dialog.dismiss()
                 }
