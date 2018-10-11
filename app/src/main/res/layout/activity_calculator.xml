@@ -93,7 +93,7 @@
             android:layout_height="match_parent"
             android:layout_marginStart="1dp"
             android:layout_weight="1"
-            android:background="@drawable/background_button_selector"
+            android:background="@drawable/bg_button_selector"
             android:text="@string/seven"
             android:textColor="@android:color/background_dark"
             android:textSize="28sp" />
