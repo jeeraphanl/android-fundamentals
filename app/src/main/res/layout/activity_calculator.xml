@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@android:color/black"
@@ -31,6 +32,7 @@
         android:layout_height="0dp"
         android:layout_marginBottom="1dp"
         android:layout_weight="1"
+        android:weightSum="4"
         android:orientation="horizontal">
 
         <Button
@@ -42,7 +44,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/ac"
             android:textColor="@android:color/background_dark"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights" />
 
         <Button
             android:layout_width="0dp"
@@ -53,7 +56,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/plus_slash_minus"
             android:textColor="@android:color/background_dark"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
         <Button
             android:layout_width="0dp"
@@ -64,7 +68,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/percent"
             android:textColor="@android:color/background_dark"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
         <Button
             android:layout_width="0dp"
@@ -76,7 +81,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/division"
             android:textColor="@android:color/white"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
     </LinearLayout>
 
@@ -96,7 +102,8 @@
             android:background="@drawable/bg_button_selector"
             android:text="@string/seven"
             android:textColor="@android:color/background_dark"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
         <Button
             android:layout_width="0dp"
@@ -107,7 +114,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/eight"
             android:textColor="@android:color/background_dark"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
         <Button
             android:layout_width="0dp"
@@ -118,7 +126,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/nine"
             android:textColor="@android:color/background_dark"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
         <Button
             android:layout_width="0dp"
@@ -130,7 +139,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/times"
             android:textColor="@android:color/white"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
     </LinearLayout>
 
@@ -150,7 +160,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/four"
             android:textColor="@android:color/background_dark"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
         <Button
             android:layout_width="0dp"
@@ -161,7 +172,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/five"
             android:textColor="@android:color/background_dark"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
         <Button
             android:layout_width="0dp"
@@ -172,7 +184,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/six"
             android:textColor="@android:color/background_dark"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
         <Button
             android:layout_width="0dp"
@@ -184,7 +197,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/minus"
             android:textColor="@android:color/white"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
     </LinearLayout>
 
@@ -204,7 +218,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/one"
             android:textColor="@android:color/background_dark"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
         <Button
             android:layout_width="0dp"
@@ -215,7 +230,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/two"
             android:textColor="@android:color/background_dark"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
         <Button
             android:layout_width="0dp"
@@ -226,7 +242,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/three"
             android:textColor="@android:color/background_dark"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
         <Button
             android:layout_width="0dp"
@@ -238,7 +255,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/plus"
             android:textColor="@android:color/white"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
     </LinearLayout>
 
@@ -258,7 +276,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/zero"
             android:textColor="@android:color/background_dark"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
         <Button
             android:layout_width="0dp"
@@ -269,7 +288,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/dot"
             android:textColor="@android:color/background_dark"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
         <Button
             android:layout_width="0dp"
@@ -281,7 +301,8 @@
             android:foreground="?attr/selectableItemBackground"
             android:text="@string/equals"
             android:textColor="@android:color/white"
-            android:textSize="28sp" />
+            android:textSize="28sp"
+            tools:ignore="ButtonStyle,NestedWeights"/>
 
     </LinearLayout>
 

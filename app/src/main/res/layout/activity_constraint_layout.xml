@@ -31,13 +31,13 @@
         app:srcCompat="@android:drawable/btn_star_big_on" />
 
     <TextView
-        android:id="@+id/singaporeTextView"
+        android:id="@+id/helpbobTextView"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/singapore"
+        android:text="@string/helpbob"
         android:textSize="30sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -75,6 +75,6 @@
         app:layout_constraintBottom_toTopOf="@id/discardButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/singaporeTextView" />
+        app:layout_constraintTop_toBottomOf="@id/helpbobTextView" />
 
 </android.support.constraint.ConstraintLayout>

@@ -10,6 +10,7 @@
 
     <string name="empty_desc"> </string>
     <string name="singapore">Singapore</string>
+    <string name="helpbob">HelpBob</string>
     <string name="upload_button">Upload</string>
     <string name="discard">Discard</string>
     <string name="singapore_desc">The Layout Editor uses constraints to determine the position of a UI element within the layout. A constraint represents a connection or alignment to another view, the parent layout, or an invisible guideline. You can create the constraints manually, as we show later, or automatically using the Autoconnect tool.</string>
