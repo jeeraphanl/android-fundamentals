@@ -7,6 +7,6 @@ class RelativeLayoutActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.relaytivelayout)
+        setContentView(R.layout.activity_relaytivelayout)
     }
 }

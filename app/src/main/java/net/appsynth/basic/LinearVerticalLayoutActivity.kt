@@ -7,6 +7,6 @@ class LinearVerticalLayoutActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.linearlayout_vertical)
+        setContentView(R.layout.activity_linearlayout_vertical)
     }
 }

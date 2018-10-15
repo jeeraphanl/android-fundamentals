@@ -7,6 +7,6 @@ class FrameLayoutActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.framelayout)
+        setContentView(R.layout.activity_framelayout)
     }
 }
