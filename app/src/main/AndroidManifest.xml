@@ -11,12 +11,20 @@
         android:supportsRtl="true"
         android:theme="@style/AppThemeGmail"
         tools:ignore="GoogleAppIndexingWarning">
-        <activity android:name=".ConstraintLayoutActivity">
+        <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity android:name=".CalculatorActivity" />
+        <activity android:name=".FrameLayoutActivity" />
+        <activity android:name=".LinearVerticalLayoutActivity" />
+        <activity android:name=".LinearHorizontalLayoutActivity" />
+        <activity android:name=".RelativeLayoutActivity" />
+        <activity android:name=".ConstraintLayoutActivity" />
+
     </application>
 
 </manifest>

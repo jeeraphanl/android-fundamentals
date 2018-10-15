@@ -35,4 +35,10 @@
     <string name="seven">7</string>
     <string name="eight">8</string>
     <string name="nine">9</string>
+
+    <string name="button_frame_layout">FrameLayout</string>
+    <string name="button_linear_vertical_layout">LinearVerticalLayout</string>
+    <string name="button_linear_horizontal_layout">LinearHorizontalLayout</string>
+    <string name="button_relative_layout">RelativeLayout</string>
+    <string name="button_constraint_layout">ConstraintLayout</string>
 </resources>
