@@ -18,12 +18,12 @@ class CharacterRecyclerViewAdapter : RecyclerView.Adapter<CharacterRecyclerViewA
 
     var characterList = mutableListOf(
             Character().apply {
-                thumb = R.drawable.monkey
-                name = "Monkey"
+                thumb = R.drawable.belly
+                name = "Belly"
                 desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
             }, Character().apply {
-                thumb = R.drawable.onion
-                name = "Onion"
+                thumb = R.drawable.devil
+                name = "Devil"
                 desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
             }
     )

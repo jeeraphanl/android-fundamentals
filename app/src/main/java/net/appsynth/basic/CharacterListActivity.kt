@@ -22,10 +22,14 @@ import java.util.*
 class CharacterListActivity : AppCompatActivity() {
 
     private val characterImageList = arrayListOf(
-            R.drawable.lettuce,
+            R.drawable.belly,
+            R.drawable.cabbage,
+            R.drawable.cactus,
+            R.drawable.devil,
+            R.drawable.green_onion,
             R.drawable.monkey,
-            R.drawable.onion,
             R.drawable.pineapple,
+            R.drawable.puffer,
             R.drawable.sheep,
             R.drawable.squid)
 
