@@ -6,7 +6,7 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v7.app.AppCompatActivity
-import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.activity_intent.*
 
 class IntentActivity : AppCompatActivity() {
 
@@ -16,14 +16,18 @@ class IntentActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_main)
+        setContentView(R.layout.activity_intent)
 
         takPhotoButton.setOnClickListener {
-            sendTextEmail()
+            openCamera()
+        }
+
+        messageButton.setOnClickListener {
+            sendText()
         }
     }
 
-    private fun sendTextEmail() {
+    private fun sendText() {
         val intent = Intent(Intent.ACTION_SEND)
         intent.type = "text/plain"
         intent.putExtra(Intent.EXTRA_SUBJECT, "Leave early")
@@ -32,7 +36,7 @@ class IntentActivity : AppCompatActivity() {
 
     }
 
-    private fun takePictureIntent() {
+    private fun openCamera() {
         val takePictureIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
         if (takePictureIntent.resolveActivity(packageManager) != null) {
             startActivityForResult(takePictureIntent, REQUEST_IMAGE_CAPTURE)

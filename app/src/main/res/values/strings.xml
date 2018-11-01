@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Activity</string>
+    <string name="app_name">My App</string>
     <string name="score">Score: %s</string>
     <string name="timeleft">Timeleft: %s</string>
     <string name="tab">Tab</string>
@@ -33,5 +33,9 @@
     <string name="eight">8</string>
     <string name="nine">9</string>
 
+    <string name="button_calculator">Calculator</string>
+    <string name="button_character">Character</string>
+    <string name="button_intent">Intent</string>
+    <string name="button_time">Time</string>
 
 </resources>
