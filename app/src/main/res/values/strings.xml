@@ -41,4 +41,5 @@
     <string name="button_linear_horizontal_layout">LinearHorizontalLayout</string>
     <string name="button_relative_layout">RelativeLayout</string>
     <string name="button_constraint_layout">ConstraintLayout</string>
+    <string name="button_calculator">Calculator</string>
 </resources>

@@ -26,13 +26,18 @@ class MainActivity : AppCompatActivity() {
             startActivity(intent)
         }
 
-        relativeButton.setOnClickListener {
+        relativeButton.setOnClickListener { 
             val intent = Intent(this, RelativeLayoutActivity::class.java)
             startActivity(intent)
         }
 
         constraintButton.setOnClickListener {
             val intent = Intent(this, ConstraintLayoutActivity::class.java)
+            startActivity(intent)
+        }
+
+        calculatorButton.setOnClickListener {
+            val intent = Intent(this, CalculatorActivity::class.java)
             startActivity(intent)
         }
     }
