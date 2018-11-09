@@ -37,7 +37,7 @@ class CharacterListActivity : AppCompatActivity() {
             R.drawable.squid)
 
     private lateinit var viewAdapter: CharacterRecyclerViewAdapter
-    private lateinit var viewManager: RecyclerView.LayoutManager
+    private lateinit var recyclerViewLayoutManager: RecyclerView.LayoutManager
 
     @SuppressLint("RestrictedApi")
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -54,7 +54,7 @@ class CharacterListActivity : AppCompatActivity() {
          * LinearLayoutManager isn’t the only layout provided by RecyclerView. Out of the box,
          * RecyclerView provides the GridLayoutManager and StaggeredGridLayoutManager.
          */
-        viewManager = LinearLayoutManager(this)
+        recyclerViewLayoutManager = LinearLayoutManager(this)
         //LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false) //Reverse
 
         //viewManager = GridLayoutManager(this, 3)
@@ -74,7 +74,7 @@ class CharacterListActivity : AppCompatActivity() {
             setHasFixedSize(true)
 
             // use a linear layout manager
-            layoutManager = viewManager
+            layoutManager = recyclerViewLayoutManager
 
             // specify an viewAdapter (see also next example)
             adapter = viewAdapter
