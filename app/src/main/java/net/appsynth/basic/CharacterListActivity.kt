@@ -53,13 +53,13 @@ class CharacterListActivity : AppCompatActivity() {
          * LinearLayoutManager isn’t the only layout provided by RecyclerView. Out of the box,
          * RecyclerView provides the GridLayoutManager and StaggeredGridLayoutManager.
          */
-        //viewManager = LinearLayoutManager(this)
+        viewManager = LinearLayoutManager(this)
         //LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false) //Reverse
 
-        viewManager = GridLayoutManager(this, 3)
+        //viewManager = GridLayoutManager(this, 3)
         //GridLayoutManager(this, 3,GridLayoutManager.HORIZONTAL, false) ////Reverse
 
-        //viewManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
+        //viewManager = StaggeredGridLayoutManager(3, StaggeredGridLayoutManager.VERTICAL)
 
         /**
          * step 2

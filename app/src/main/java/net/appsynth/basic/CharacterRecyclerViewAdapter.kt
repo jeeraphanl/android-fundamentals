@@ -24,6 +24,62 @@ class CharacterRecyclerViewAdapter : RecyclerView.Adapter<CharacterRecyclerViewA
             }, Character().apply {
                 thumb = R.drawable.devil
                 name = "Devil"
+                desc = "To use these ."
+            }, Character().apply {
+                thumb = R.drawable.squid
+                name = "Squid"
+                desc = "To use these attributes, add the tools namespace to the root ."
+            }, Character().apply {
+                thumb = R.drawable.monkey
+                name = "Monkey"
+                desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
+            }, Character().apply {
+                thumb = R.drawable.pineapple
+                name = "Pineapple"
+                desc = "To use these attributes, add the."
+            }, Character().apply {
+                thumb = R.drawable.cactus
+                name = "Cactus"
+                desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
+            }, Character().apply {
+                thumb = R.drawable.devil
+                name = "Devil"
+                desc = "To use these ."
+            }, Character().apply {
+                thumb = R.drawable.squid
+                name = "Squid"
+                desc = "To use these attributes, add the tools namespace to the root ."
+            }, Character().apply {
+                thumb = R.drawable.monkey
+                name = "Monkey"
+                desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
+            }, Character().apply {
+                thumb = R.drawable.pineapple
+                name = "Pineapple"
+                desc = "To use these attributes, add the."
+            }, Character().apply {
+                thumb = R.drawable.cactus
+                name = "Cactus"
+                desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
+            }, Character().apply {
+                thumb = R.drawable.devil
+                name = "Devil"
+                desc = "To use these ."
+            }, Character().apply {
+                thumb = R.drawable.squid
+                name = "Squid"
+                desc = "To use these attributes, add the tools namespace to the root ."
+                }, Character().apply {
+                thumb = R.drawable.monkey
+                name = "Monkey"
+                desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
+            }, Character().apply {
+                thumb = R.drawable.pineapple
+                name = "Pineapple"
+                desc = "To use these attributes, add the."
+            }, Character().apply {
+                thumb = R.drawable.cactus
+                name = "Cactus"
                 desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
             }
     )
