@@ -1,4 +1,4 @@
-package net.appsynth.basic
+package net.appsynth.basic.presentation.activity
 
 import android.app.Activity
 import android.content.Intent
@@ -7,6 +7,7 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_intent.*
+import net.appsynth.basic.R
 
 class IntentActivity : AppCompatActivity() {
 

@@ -1,9 +1,10 @@
-package net.appsynth.basic
+package net.appsynth.basic.presentation.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import kotlinx.android.synthetic.main.activity_calculator.*
+import net.appsynth.basic.R
 
 class CalculatorActivity : AppCompatActivity() {
 

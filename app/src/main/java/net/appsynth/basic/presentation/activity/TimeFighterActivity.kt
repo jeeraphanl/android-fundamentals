@@ -1,4 +1,4 @@
-package net.appsynth.basic
+package net.appsynth.basic.presentation.activity
 
 import android.content.res.Configuration
 import android.os.Bundle
@@ -6,6 +6,7 @@ import android.os.CountDownTimer
 import android.support.v7.app.AppCompatActivity
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_time_fighter.*
+import net.appsynth.basic.R
 
 class TimeFighterActivity : AppCompatActivity() {
 

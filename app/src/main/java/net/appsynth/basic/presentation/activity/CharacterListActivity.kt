@@ -1,4 +1,4 @@
-package net.appsynth.basic
+package net.appsynth.basic.presentation.activity
 
 import android.annotation.SuppressLint
 import android.app.Activity
@@ -7,10 +7,8 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.StaggeredGridLayoutManager
 import android.text.InputType
 import android.util.Pair
 import android.view.View
@@ -19,6 +17,9 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_character_list.*
+import net.appsynth.basic.model.Character
+import net.appsynth.basic.R
+import net.appsynth.basic.presentation.adapter.CharacterRecyclerViewAdapter
 import java.util.*
 
 class CharacterListActivity : AppCompatActivity() {
@@ -81,9 +82,9 @@ class CharacterListActivity : AppCompatActivity() {
 
         //set event click listener
         viewAdapter.itemClick = { character: Character,
-                                                   characterThumbImageView: ImageView,
-                                                   characterNameTextView: TextView,
-                                                   characterDescTextView: TextView ->
+                                  characterThumbImageView: ImageView,
+                                  characterNameTextView: TextView,
+                                  characterDescTextView: TextView ->
 
             val options = ActivityOptions.makeSceneTransitionAnimation(this,
                     Pair<View, String>(characterThumbImageView, "characterThumbTransition"),

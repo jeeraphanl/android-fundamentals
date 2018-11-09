@@ -1,4 +1,4 @@
-package net.appsynth.basic
+package net.appsynth.basic.presentation.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -7,6 +7,8 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import kotlinx.android.synthetic.main.item_character.view.*
+import net.appsynth.basic.model.Character
+import net.appsynth.basic.R
 
 class CharacterRecyclerViewAdapter : RecyclerView.Adapter<CharacterRecyclerViewAdapter.CharacterViewHolder>() {
 

@@ -1,9 +1,10 @@
-package net.appsynth.basic
+package net.appsynth.basic.presentation.activity
 
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
+import net.appsynth.basic.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {

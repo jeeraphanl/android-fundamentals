@@ -12,7 +12,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="GoogleAppIndexingWarning">
         <activity
-            android:name=".MainActivity"
+            android:name=".presentation.activity.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme">
             <intent-filter>
@@ -20,12 +20,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CalculatorActivity" />
-        <activity android:name=".CharacterListActivity"/>
-        <activity android:name=".CharacterDetailActivity" />
-        <activity android:name=".TimeFighterActivity" />
-        <activity android:name=".IntentActivity" />
-        <activity android:name=".ReceiveIntentActivity">
+        <activity android:name=".presentation.activity.CalculatorActivity" />
+        <activity android:name=".presentation.activity.CharacterListActivity"/>
+        <activity android:name=".presentation.activity.CharacterDetailActivity" />
+        <activity android:name=".presentation.activity.TimeFighterActivity" />
+        <activity android:name=".presentation.activity.IntentActivity" />
+        <activity android:name=".presentation.activity.ReceiveIntentActivity">
             <intent-filter>
                 <action android:name="android.intent.action.SEND" />
                 <category android:name="android.intent.category.DEFAULT" />

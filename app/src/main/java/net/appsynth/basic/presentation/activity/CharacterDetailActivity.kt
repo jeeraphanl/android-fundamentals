@@ -1,8 +1,10 @@
-package net.appsynth.basic
+package net.appsynth.basic.presentation.activity
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_character_detail.*
+import net.appsynth.basic.model.Character
+import net.appsynth.basic.R
 
 class CharacterDetailActivity : AppCompatActivity() {
 

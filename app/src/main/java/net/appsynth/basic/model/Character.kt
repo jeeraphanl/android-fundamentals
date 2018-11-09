@@ -1,4 +1,4 @@
-package net.appsynth.basic
+package net.appsynth.basic.model
 
 import android.os.Parcel
 import android.os.Parcelable
