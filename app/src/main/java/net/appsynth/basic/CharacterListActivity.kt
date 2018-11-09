@@ -7,8 +7,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AlertDialog
 import android.support.v7.app.AppCompatActivity
+import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
+import android.support.v7.widget.StaggeredGridLayoutManager
 import android.text.InputType
 import android.util.Pair
 import android.view.View
@@ -51,7 +53,13 @@ class CharacterListActivity : AppCompatActivity() {
          * LinearLayoutManager isn’t the only layout provided by RecyclerView. Out of the box,
          * RecyclerView provides the GridLayoutManager and StaggeredGridLayoutManager.
          */
-        viewManager = LinearLayoutManager(this)
+        //viewManager = LinearLayoutManager(this)
+        //LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false) //Reverse
+
+        viewManager = GridLayoutManager(this, 3)
+        //GridLayoutManager(this, 3,GridLayoutManager.HORIZONTAL, false) ////Reverse
+
+        //viewManager = StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL)
 
         /**
          * step 2
