@@ -29,10 +29,7 @@ class NewsActivity : AppCompatActivity() {
 
     private fun getNews() {
 
-        val newService = NewsService.instance
-        val newsCall = newService.getNews()
-
-        newsCall.enqueue(object : Callback<FeedResponse> {
+        NewsService.instance.getNews().enqueue(object : Callback<FeedResponse> {
 
             override fun onFailure(call: Call<FeedResponse>?, t: Throwable?) {
 
