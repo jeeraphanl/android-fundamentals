@@ -1,4 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <dimen name="margin_parent">8dp</dimen>
+    <dimen name="margin_parent_text">16dp</dimen>
+    <dimen name="news_item_height">100dp</dimen>
 </resources>
