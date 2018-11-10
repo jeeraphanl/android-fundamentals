@@ -86,7 +86,7 @@ class FoodListActivity : AppCompatActivity(), FoodListFragment.OnListItemFragmen
                         val index = random.nextInt(foodImageList.size - 1)
                         val food = Food().apply {
                             name = newFoodName
-                            desc = "Decs"
+                            desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
                             thumb = foodImageList[index]
                         }
 

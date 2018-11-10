@@ -13,19 +13,19 @@ class FoodRecyclerViewAdapter : RecyclerView.Adapter<FoodRecyclerViewAdapter.Foo
     var foodList = mutableListOf(Food().apply {
         name = "Apple"
         thumb = R.drawable.apple
-        desc
+        desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
     }, Food().apply {
         name = "Butter popcorn"
         thumb = R.drawable.butter_popcorn
-        desc
+        desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
     }, Food().apply {
         name = "Cheese cake"
         thumb = R.drawable.cheese_cake
-        desc
+        desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
     }, Food().apply {
         name = "Chocolate cake"
         thumb = R.drawable.chocolate_cake
-        desc
+        desc = "To use these attributes, add the tools namespace to the root element of each XML file where you would like to use them, as shown here."
     })
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FoodViewHolder {
