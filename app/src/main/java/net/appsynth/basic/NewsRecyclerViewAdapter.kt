@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.item_news.view.*
 
 class NewsRecyclerViewAdapter : RecyclerView.Adapter<NewsRecyclerViewAdapter.NewsViewHolder>() {
 
-    var articleList = mutableListOf<Article>()
+    var articleList = mutableListOf<FeedResponse.Article>()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): NewsViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_news, parent, false)
@@ -32,5 +32,5 @@ class NewsRecyclerViewAdapter : RecyclerView.Adapter<NewsRecyclerViewAdapter.New
         }
     }
 
-    inner class NewsViewHolder(itemView: View?) : RecyclerView.ViewHolder(itemView)
+    inner class NewsViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView)
 }

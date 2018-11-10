@@ -3,6 +3,7 @@ package net.appsynth.basic
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
 import android.support.v7.widget.LinearLayoutManager
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_news.*
 import retrofit2.Call
 import retrofit2.Callback
@@ -16,9 +17,12 @@ class NewsActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_news)
 
-        newsRecyclerView.layoutManager = LinearLayoutManager(this)
         newsRecyclerViewAdapter = NewsRecyclerViewAdapter()
-        newsRecyclerView.adapter = newsRecyclerViewAdapter
+        newsRecyclerView.apply {
+            adapter = newsRecyclerViewAdapter
+        }.also { recyclerView ->
+            recyclerView.layoutManager = LinearLayoutManager(this)
+        }
 
         getNews()
     }
@@ -29,13 +33,18 @@ class NewsActivity : AppCompatActivity() {
         val newsCall = newService.getNews()
 
         newsCall.enqueue(object : Callback<FeedResponse> {
+
             override fun onFailure(call: Call<FeedResponse>?, t: Throwable?) {
+
             }
 
             override fun onResponse(call: Call<FeedResponse>?, response: Response<FeedResponse>?) {
                 response?.body()?.articles?.let { articleList ->
                     newsRecyclerViewAdapter.articleList = articleList
                     newsRecyclerViewAdapter.notifyDataSetChanged()
+
+                } ?: run {
+                    Toast.makeText(baseContext, "Something went wrong!", Toast.LENGTH_LONG).show()
                 }
             }
         })
