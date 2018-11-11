@@ -3,7 +3,6 @@ package net.appsynth.basic
 import android.animation.Animator
 import android.animation.AnimatorSet
 import android.animation.ObjectAnimator
-import android.animation.ValueAnimator
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_type.*
@@ -123,5 +122,35 @@ class TypeActivity : AppCompatActivity() {
             }
 
         })
+
+        var helpBob: HelpBob? = null
+
+        // let and run
+        helpBob?.let {
+            print(it)
+        } ?: run {
+            print(this)
+        }
+
+        // apply and also
+        helpBob = HelpBob().apply {
+            name = "name"
+            age = 1
+        }.also {
+            print(this)
+        }
+
+
+        // with
+        // only nonnull, it will be crash
+        with(helpBob){
+            print(this.name)
+            print(this.age)
+        }
     }
+}
+
+class HelpBob {
+    var name: String = ""
+    var age: Int = 0
 }

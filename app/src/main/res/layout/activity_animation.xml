@@ -6,7 +6,7 @@
     android:background="@color/colorNoon">
 
     <ImageView
-        android:id="@+id/falconImageView"
+        android:id="@+id/helpBobImageView"
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_gravity="bottom|center_horizontal"

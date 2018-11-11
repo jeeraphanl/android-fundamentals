@@ -9,6 +9,10 @@ import android.view.animation.AccelerateInterpolator
 import android.view.animation.BounceInterpolator
 import android.view.animation.LinearInterpolator
 import kotlinx.android.synthetic.main.activity_animation.*
+import android.animation.AnimatorInflater
+import android.animation.ObjectAnimator
+
+
 
 class AnimationActivity : AppCompatActivity() {
 
@@ -24,7 +28,7 @@ class AnimationActivity : AppCompatActivity() {
         setContentView(R.layout.activity_animation)
 
         containerFrameLayout.setOnClickListener {
-            startValueAnimatorRotate()
+            setAnimatorTransitionYAndBackgroundReverse()
         }
     }
 
@@ -38,42 +42,25 @@ class AnimationActivity : AppCompatActivity() {
     /**
      * ValueAnimator
      */
-    private fun startValueAnimatorRotate() {
+    private fun valueAnimatorRotate() {
 
         ValueAnimator.ofFloat(0f, 360f).apply {
             addUpdateListener { valueAnimator ->
                 val value = valueAnimator.animatedValue as Float
-                falconImageView.rotation = value
+                helpBobImageView.rotation = value
             }
 
             repeatCount = 3
             duration = ANIMATION_SHORT_DURATION
             start()
-        }.addListener(object : Animator.AnimatorListener{
-            override fun onAnimationRepeat(animation: Animator?) {
-
-            }
-
-            override fun onAnimationEnd(animation: Animator?) {
-                startValueAnimatorRotate()
-            }
-
-            override fun onAnimationCancel(animation: Animator?) {
-
-            }
-
-            override fun onAnimationStart(animation: Animator?) {
-
-            }
-
-        })
+        }
     }
 
-    private fun startValueAnimatorTranslationYLinearInterpolator() {
+    private fun valueAnimatorTranslationYLinearInterpolator() {
         ValueAnimator.ofFloat(0f, -screenHeight).apply {
             addUpdateListener { valueAnimator ->
                 val value = valueAnimator.animatedValue as Float
-                falconImageView.translationY = value
+                helpBobImageView.translationY = value
             }
 
             interpolator = LinearInterpolator()
@@ -84,16 +71,27 @@ class AnimationActivity : AppCompatActivity() {
         }
     }
 
-    private fun startValueAnimatorTranslationYAccelerateInterpolator() {
+    private fun valueAnimatorTranslationYAccelerateInterpolator() {
 
         ValueAnimator.ofFloat(0f, -screenHeight).apply {
             addUpdateListener { valueAnimator ->
                 val value = valueAnimator.animatedValue as Float
-                falconImageView.translationY = value
+                helpBobImageView.translationY = value
             }
 
-            interpolator = AccelerateInterpolator(2.7f)
+            interpolator = AccelerateInterpolator(2.7f) // increase the speed first and then decrease
             duration = ANIMATION_DURATION
+            start()
+        }
+    }
+
+    private fun valueAnimatorInflater() {
+        (AnimatorInflater.loadAnimator(this, R.animator.value_animator_translation) as ValueAnimator).apply {
+            addUpdateListener { animation ->
+                val progress = animation.animatedValue as Float
+                helpBobImageView.translationY = progress
+            }
+
             start()
         }
     }
@@ -101,14 +99,21 @@ class AnimationActivity : AppCompatActivity() {
     /**
      * ObjectAnimator
      */
-    private fun startObjectAnimatorTranslationY() {
-        ObjectAnimator.ofFloat(falconImageView, "translationY", 0f, -screenHeight).apply {
+    private fun objectAnimatorTranslationY() {
+        ObjectAnimator.ofFloat(helpBobImageView, "translationY", 0f, -screenHeight).apply {
             duration = ANIMATION_DURATION
             start()
         }
     }
 
-    private fun startObjectAnimatorBackgroundColor() {
+    private fun objectAnimatorInflater() {
+        (AnimatorInflater.loadAnimator(this, R.animator.object_animator) as ObjectAnimator).apply {
+            target = helpBobImageView
+            start()
+        }
+    }
+
+    private fun objectAnimatorBackgroundColor() {
         ObjectAnimator.ofObject(
                 containerFrameLayout,
                 "backgroundColor",
@@ -125,8 +130,8 @@ class AnimationActivity : AppCompatActivity() {
     /**
      * Final animator
      */
-    private fun startAnimationSetTransitionYAndBackground() {
-        val transitionYAnimation = ObjectAnimator.ofFloat(falconImageView, "translationY", 0f, -screenHeight)
+    private fun setAnimatorTransitionYAndBackground() {
+        val transitionYAnimation = ObjectAnimator.ofFloat(helpBobImageView, "translationY", 0f, -screenHeight)
         transitionYAnimation.repeatCount = 1
         transitionYAnimation.repeatMode = ValueAnimator.REVERSE
 
@@ -141,15 +146,16 @@ class AnimationActivity : AppCompatActivity() {
         backgroundAnimation.repeatMode = ValueAnimator.REVERSE
 
         AnimatorSet().apply {
-            play(transitionYAnimation).with(backgroundAnimation)
+            play(transitionYAnimation)
+                    .with(backgroundAnimation)
             duration = ANIMATION_DURATION
             start()
         }
     }
 
-    private fun startAnimationSetTransitionYAndBackgroundReverse() {
-        val transitionYAnimation = ObjectAnimator.ofFloat(falconImageView, "translationY", 0f, -screenHeight)
-        val transitionYAnimationBack = ObjectAnimator.ofFloat(falconImageView, "translationY", -screenHeight, 0f)
+    private fun setAnimatorTransitionYAndBackgroundReverse() {
+        val transitionYAnimation = ObjectAnimator.ofFloat(helpBobImageView, "translationY", 0f, -screenHeight)
+        val transitionYAnimationBack = ObjectAnimator.ofFloat(helpBobImageView, "translationY", -screenHeight, 0f)
         val backgroundAnimation = ObjectAnimator.ofObject(
                 containerFrameLayout,
                 "backgroundColor",
@@ -170,7 +176,7 @@ class AnimationActivity : AppCompatActivity() {
         animatorSet.play(transitionYAnimation).with(backgroundAnimation)
         animatorSet.duration = ANIMATION_DURATION
 
-        animatorSet.addListener(object : Animator.AnimatorListener{
+        animatorSet.addListener(object : Animator.AnimatorListener {
             override fun onAnimationRepeat(animation: Animator?) {
 
             }
@@ -199,7 +205,7 @@ class AnimationActivity : AppCompatActivity() {
      * Android API 27
      */
     private fun startViewPropertyAnimatorTranslationY() {
-        falconImageView.animate()
+        helpBobImageView.animate()
                 .translationY(-screenHeight)
                 .setDuration(ANIMATION_DURATION)
                 .setInterpolator(BounceInterpolator())
@@ -207,11 +213,11 @@ class AnimationActivity : AppCompatActivity() {
     }
 
     /**
-     * Animator XML
+     * Animator Set XML
      */
     private fun statAnimatorWithXml() {
-        val animatorSet = AnimatorInflater.loadAnimator(this, R.animator.falcon_animator) as AnimatorSet
-        animatorSet.setTarget(falconImageView)
+        val animatorSet = AnimatorInflater.loadAnimator(this, R.animator.set_animator) as AnimatorSet
+        animatorSet.setTarget(helpBobImageView)
         animatorSet.start()
     }
 }
