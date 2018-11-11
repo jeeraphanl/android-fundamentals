@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="view_width">100dp</dimen>
+    <dimen name="layout_height">100dp</dimen>
+    <dimen name="margin_top">24dp</dimen>
+</resources>
